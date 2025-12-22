@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons - Bootstrap Agentic Component Library</title>
+    
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/overrides.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Buttons</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Examples</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Button Examples</h1>
+        <p class="lead mb-5">Various button styles and configurations.</p>
+
+        <div class="mb-5">
+            <h2 class="h4 mb-3">Pill Buttons</h2>
+            <div class="d-flex gap-2 justify-content-center py-3">
+                <button class="btn btn-primary rounded-pill px-3" type="button">Primary</button>
+                <button class="btn btn-secondary rounded-pill px-3" type="button">Secondary</button>
+                <button class="btn btn-success rounded-pill px-3" type="button">Success</button>
+                <button class="btn btn-danger rounded-pill px-3" type="button">Danger</button>
+                <button class="btn btn-warning rounded-pill px-3" type="button">Warning</button>
+                <button class="btn btn-info rounded-pill px-3" type="button">Info</button>
+                <button class="btn btn-light rounded-pill px-3" type="button">Light</button>
+                <button class="btn btn-dark rounded-pill px-3" type="button">Dark</button>
+                <button class="btn btn-link rounded-pill px-3" type="button">Link</button>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="h4 mb-3">Action Buttons</h2>
+            <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary" type="button">Secondary action</button>
+                    <button class="btn btn-primary" type="button">Primary action</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="h4 mb-3">Buttons with Icons</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+                <symbol id="arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                </symbol>
+            </svg>
+            <div class="d-flex gap-2 justify-content-center py-3">
+                <button class="btn btn-primary d-inline-flex align-items-center" type="button">
+                    Primary icon
+                    <svg class="bi ms-1" width="20" height="20" aria-hidden="true">
+                        <use xlink:href="#arrow-right-short"></use>
+                    </svg>
+                </button>
+                <button class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+                    Secondary icon
+                    <svg class="bi ms-1" width="20" height="20" aria-hidden="true">
+                        <use xlink:href="#arrow-right-short"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="h4 mb-3">Loading Buttons</h2>
+            <div class="d-flex gap-2 justify-content-center py-3">
+                <button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                    <span class="visually-hidden" role="status">Loading...</span>
+                </button>
+                <button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                    <span role="status">Loading...</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="h4 mb-3">Circular Icon Buttons</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+                <symbol id="x-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"></path>
+                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"></path>
+                </symbol>
+            </svg>
+            <div class="d-flex gap-2 justify-content-center pt-5 pb-4">
+                <button class="btn btn-primary rounded-circle p-2 lh-1" type="button">
+                    <svg class="bi" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="#x-lg"></use>
+                    </svg>
+                    <span class="visually-hidden">Dismiss</span>
+                </button>
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
+                    <svg class="bi" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="#x-lg"></use>
+                    </svg>
+                    <span class="visually-hidden">Dismiss</span>
+                </button>
+            </div>
+            <div class="d-flex gap-2 justify-content-center pb-5">
+                <button class="btn btn-primary rounded-circle p-3 lh-1" type="button">
+                    <svg class="bi" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="#x-lg"></use>
+                    </svg>
+                    <span class="visually-hidden">Dismiss</span>
+                </button>
+                <button class="btn btn-outline-primary rounded-circle p-3 lh-1" type="button">
+                    <svg class="bi" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="#x-lg"></use>
+                    </svg>
+                    <span class="visually-hidden">Dismiss</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Bootstrap JavaScript Bundle via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+</body>
+</html>
+
