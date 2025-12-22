@@ -456,6 +456,36 @@ Examples are full runnable HTML pages located in `/examples/`. Each example:
 
 ---
 
+### Content Examples
+
+#### Album
+**Path**: `/examples/album.html`
+
+**Purpose**: Card grid layout for showcasing collections, portfolios, or galleries.
+
+---
+
+#### Blog
+**Path**: `/examples/blog.html`
+
+**Purpose**: Blog/content layout with featured posts, articles, and sidebar.
+
+---
+
+#### Cover
+**Path**: `/examples/cover.html`
+
+**Purpose**: Full-page hero/landing page template with centered content.
+
+---
+
+#### Checkout
+**Path**: `/examples/checkout.html`
+
+**Purpose**: E-commerce checkout form with cart summary and billing details.
+
+---
+
 ## Quick Reference
 
 ### Components by Category
@@ -498,6 +528,10 @@ Examples are full runnable HTML pages located in `/examples/`. Each example:
 | Marketing Home | `/examples/marketing-home.html` |
 | Pricing | `/examples/pricing.html` |
 | Modal Confirm | `/examples/modal-confirm.html` |
+| Album | `/examples/album.html` |
+| Blog | `/examples/blog.html` |
+| Cover | `/examples/cover.html` |
+| Checkout | `/examples/checkout.html` |
 
 ## Usage Notes
 
