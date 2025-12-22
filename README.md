@@ -1,5 +1,27 @@
 # bootstrap
 
+## Instruction Layer (Read This First)
+
+Before using this repository, read the root-level instruction files in this order:
+
+1. **README.md** (this file) - Overview and getting started
+2. **AGENT_RULES.md** - Core principles, constraints, and workflow rules
+3. **COMPONENTS_INDEX.md** - Complete inventory of components, patterns, and examples
+4. **DESIGN_PRINCIPLES.md** - Design decision framework and component restrictions
+5. **ACCESSIBILITY.md** - WCAG 2.1 AA requirements and mandatory accessibility rules
+6. **TOKENS_REFERENCE.md** - Available design tokens and CSS usage rules
+
+Each file serves a specific purpose:
+- **AGENT_RULES.md**: Behavioral contracts and composition rules
+- **COMPONENTS_INDEX.md**: Catalog of available resources
+- **DESIGN_PRINCIPLES.md**: When and how to use components appropriately
+- **ACCESSIBILITY.md**: Mandatory accessibility standards and checklists
+- **TOKENS_REFERENCE.md**: Design token usage and CSS constraints
+
+After reading these, reference component-level `.md` files and patterns/examples as needed.
+
+---
+
 ## How to use this repo with agent tools
 
 This repository provides an "Agentic Bootstrap Component Library" designed for AI agents to assemble consistent Bootstrap-based pages.

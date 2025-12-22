@@ -55,3 +55,53 @@
 - Color contrast meets WCAG AA standards
 - Focus indicators are visible
 
+## Required Read Order
+
+Agents must read documentation in this order before composing pages:
+
+1. **README.md** - Overview and getting started
+2. **AGENT_RULES.md** - This file: core principles and constraints
+3. **COMPONENTS_INDEX.md** - Complete inventory of available components, patterns, and examples
+4. **DESIGN_PRINCIPLES.md** - Design decision framework and component restrictions
+5. **ACCESSIBILITY.md** - WCAG 2.1 AA requirements and mandatory rules
+6. **TOKENS_REFERENCE.md** - Available design tokens and usage rules
+7. **Component-level *.md** - Individual component documentation as needed
+8. **Patterns/Examples** - Reference patterns and examples for specific use cases
+
+This order ensures agents understand constraints, available resources, and quality standards before implementation.
+
+## Output Rejection Conditions
+
+Reject output if any of the following conditions are met:
+
+### Component Violations
+- ❌ New components are invented without adding them to `COMPONENTS_INDEX.md`
+- ❌ Component snippets are modified in `/components/` (composition only)
+- ❌ Components are used in ways that violate their documentation
+
+### Bootstrap Version Violations
+- ❌ Bootstrap CDN version differs from `BOOTSTRAP_VERSION.md` (must be 5.3.8)
+- ❌ Different CDN URLs are used than specified in `BOOTSTRAP_VERSION.md`
+
+### CSS Violations
+- ❌ Custom CSS is added outside `/styles/tokens.css` and `/styles/overrides.css`
+- ❌ Inline styles are used for colors, spacing, or layout
+- ❌ Hard-coded hex values are used instead of Bootstrap classes or tokens
+- ❌ New CSS files are created
+
+### Accessibility Violations
+- ❌ Accessibility checklist in `ACCESSIBILITY.md` is not satisfied
+- ❌ Form inputs lack associated labels
+- ❌ Images lack alt attributes
+- ❌ ARIA attributes are missing or incorrect
+- ❌ Keyboard navigation is broken
+- ❌ Color contrast does not meet WCAG 2.1 AA standards
+
+### Design Principle Violations
+- ❌ Restricted components (carousel, tooltip/popover, scrollspy) are used without justification
+- ❌ Complex workflows are built in modals instead of full pages
+- ❌ Bootstrap utilities are not preferred over custom CSS
+- ❌ Existing patterns/examples are not referenced for similar use cases
+
+If output is rejected, provide specific violations and corrections needed.
+
