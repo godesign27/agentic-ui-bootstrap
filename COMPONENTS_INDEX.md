@@ -523,6 +523,34 @@ Examples are full runnable HTML pages located in `/examples/`. Each example:
 
 ---
 
+#### Navbar Static
+**Path**: `/examples/navbar-static.html`
+
+**Purpose**: Static top navbar that scrolls with the page content.
+
+---
+
+#### Navbar Fixed
+**Path**: `/examples/navbar-fixed.html`
+
+**Purpose**: Fixed top navbar that remains visible when scrolling.
+
+---
+
+#### Navbar Bottom
+**Path**: `/examples/navbar-bottom.html`
+
+**Purpose**: Fixed bottom navbar with dropup menu example.
+
+---
+
+#### Offcanvas Navbar
+**Path**: `/examples/offcanvas-navbar.html`
+
+**Purpose**: Complex offcanvas navbar with secondary navigation scroller and content sections.
+
+---
+
 #### Headers
 **Path**: `/examples/headers.html`
 
@@ -595,6 +623,10 @@ Examples are full runnable HTML pages located in `/examples/`. Each example:
 | Breadcrumbs | `/examples/breadcrumbs.html` |
 | Starter Template | `/examples/starter-template.html` |
 | Navbars Offcanvas | `/examples/navbars-offcanvas.html` |
+| Navbar Static | `/examples/navbar-static.html` |
+| Navbar Fixed | `/examples/navbar-fixed.html` |
+| Navbar Bottom | `/examples/navbar-bottom.html` |
+| Offcanvas Navbar | `/examples/offcanvas-navbar.html` |
 | Headers | `/examples/headers.html` |
 | Sidebars | `/examples/sidebars.html` |
 | Buttons | `/examples/buttons.html` |
