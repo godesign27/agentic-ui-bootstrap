@@ -486,6 +486,64 @@ Examples are full runnable HTML pages located in `/examples/`. Each example:
 
 ---
 
+### Component Examples
+
+#### Navbars
+**Path**: `/examples/navbars.html`
+
+**Purpose**: Demonstrates various navbar configurations and breakpoint behaviors.
+
+---
+
+#### Badges
+**Path**: `/examples/badges.html`
+
+**Purpose**: Showcases badge styles including basic, subtle, bordered, and dismissible variants.
+
+---
+
+#### Breadcrumbs
+**Path**: `/examples/breadcrumbs.html`
+
+**Purpose**: Examples of breadcrumb navigation with icons and styling variations.
+
+---
+
+#### Starter Template
+**Path**: `/examples/starter-template.html`
+
+**Purpose**: Minimal starter template with basic structure and helpful links.
+
+---
+
+#### Navbars Offcanvas
+**Path**: `/examples/navbars-offcanvas.html`
+
+**Purpose**: Navbar examples with offcanvas menus for mobile navigation.
+
+---
+
+#### Headers
+**Path**: `/examples/headers.html`
+
+**Purpose**: Various header layouts including simple, centered, with buttons, and dark themes.
+
+---
+
+#### Sidebars
+**Path**: `/examples/sidebars.html`
+
+**Purpose**: Sidebar navigation patterns including dark, light, and collapsible variants.
+
+---
+
+#### Buttons
+**Path**: `/examples/buttons.html`
+
+**Purpose**: Button examples including pill buttons, icons, loading states, and circular buttons.
+
+---
+
 ## Quick Reference
 
 ### Components by Category
@@ -532,6 +590,14 @@ Examples are full runnable HTML pages located in `/examples/`. Each example:
 | Blog | `/examples/blog.html` |
 | Cover | `/examples/cover.html` |
 | Checkout | `/examples/checkout.html` |
+| Navbars | `/examples/navbars.html` |
+| Badges | `/examples/badges.html` |
+| Breadcrumbs | `/examples/breadcrumbs.html` |
+| Starter Template | `/examples/starter-template.html` |
+| Navbars Offcanvas | `/examples/navbars-offcanvas.html` |
+| Headers | `/examples/headers.html` |
+| Sidebars | `/examples/sidebars.html` |
+| Buttons | `/examples/buttons.html` |
 
 ## Usage Notes
 
