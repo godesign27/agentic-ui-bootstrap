@@ -7,7 +7,11 @@
  * 
  * Hotkeys:
  *   Cmd+L (Mac) or Ctrl+L (Windows) - Toggle drawer
+ *   Cmd+K (Mac) or Ctrl+K (Windows) - Toggle drawer (fallback)
  *   ESC - Close drawer
+ * 
+ * Declarative trigger:
+ *   Add data-open-prompt-drawer attribute to any element to open drawer on click
  */
 
 class PromptDrawer {
@@ -21,6 +25,7 @@ class PromptDrawer {
   init() {
     this.createDrawer();
     this.setupHotkeys();
+    this.setupClickTriggers();
     this.loadPrompts();
   }
 
@@ -130,18 +135,54 @@ class PromptDrawer {
 
   setupHotkeys() {
     document.addEventListener('keydown', (e) => {
+      // Ignore shortcuts when typing in form elements
+      const isInputElement = e.target.tagName === 'INPUT' ||
+                             e.target.tagName === 'TEXTAREA' ||
+                             e.target.tagName === 'SELECT' ||
+                             e.target.isContentEditable;
+      
+      if (isInputElement) {
+        return;
+      }
+      
       const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
       const modifier = isMac ? e.metaKey : e.ctrlKey;
       
+      // Ignore if modifier keys other than Cmd/Ctrl are pressed
+      if (e.shiftKey || e.altKey) {
+        return;
+      }
+      
       // Cmd/Ctrl+L to toggle
-      if (modifier && e.key === 'l' && !e.shiftKey && !e.altKey) {
+      if (modifier && e.key === 'l') {
         e.preventDefault();
         this.toggle();
+        return;
+      }
+      
+      // Cmd/Ctrl+K to toggle (fallback)
+      if (modifier && e.key === 'k') {
+        e.preventDefault();
+        this.toggle();
+        return;
       }
       
       // ESC to close
       if (e.key === 'Escape' && this.isOpen) {
         this.close();
+      }
+    });
+  }
+
+  setupClickTriggers() {
+    // Single delegated click handler for declarative triggers
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-prompt-drawer]');
+      if (trigger) {
+        e.preventDefault();
+        if (!this.isOpen) {
+          this.open();
+        }
       }
     });
   }

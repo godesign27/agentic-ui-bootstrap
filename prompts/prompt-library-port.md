@@ -1,8 +1,8 @@
 You are working in a project that needs the Prompt Library drawer component.
 
-## Task: Install Prompt Library Drawer (Cmd/Ctrl+L)
+## Task: Install Prompt Library Drawer (Cmd/Ctrl+L or Cmd/Ctrl+K)
 
-**Scope**: Port the Prompt Library drawer component into the local project to enable Cmd/Ctrl+L hotkey access to prompts.
+**Scope**: Port the Prompt Library drawer component into the local project to enable Cmd/Ctrl+L or Cmd/Ctrl+K hotkey access to prompts, and create a minimal verification page.
 
 ## Requirements
 
@@ -26,6 +26,15 @@ You are working in a project that needs the Prompt Library drawer component.
    - Ensure prompt markdown files are accessible via relative paths from HTML
    - Ensure PROMPTS_INDEX.json is accessible at the path specified in the code
    - Update fetch paths in `prompt-drawer.js` if project structure differs
+
+5. **Create Minimal Verification Start Page**
+   - Create `/start/index.html` (or closest equivalent if routing constraints exist)
+   - Page must contain ONLY:
+     - H1: "Hello World"
+     - One short line: "Prompt Library installed. Use Cmd/Ctrl+L or Cmd/Ctrl+K."
+     - CTA button labeled "Open Prompt Library" with attribute: `data-open-prompt-drawer`
+   - Include drawer CSS and JS files
+   - Do NOT generate any additional UI beyond this minimal verification page
 
 ## Constraints
 
@@ -51,9 +60,12 @@ You are working in a project that needs the Prompt Library drawer component.
 - [ ] HTML includes added to target pages
 - [ ] File paths verified and updated if needed
 - [ ] Drawer opens with Cmd/Ctrl+L hotkey
+- [ ] Drawer opens with Cmd/Ctrl+K hotkey (fallback)
+- [ ] Drawer opens via declarative trigger (data-open-prompt-drawer)
 - [ ] Prompts load and display correctly
 - [ ] Copy to clipboard functionality works
 - [ ] ESC key closes drawer
+- [ ] Verification Start page created at /start/index.html
 
 ## Workflow
 
@@ -61,13 +73,20 @@ You are working in a project that needs the Prompt Library drawer component.
 2. Create or adapt `PROMPTS_INDEX.json` with project's prompts
 3. Add CSS and JS includes to HTML pages
 4. Update file paths in `prompt-drawer.js` if project structure differs
-5. Test drawer functionality:
+5. Create minimal verification Start page at `/start/index.html`:
+   - H1: "Hello World"
+   - One line: "Prompt Library installed. Use Cmd/Ctrl+L or Cmd/Ctrl+K."
+   - CTA button with `data-open-prompt-drawer` attribute
+   - Include drawer CSS and JS
+6. Test drawer functionality:
    - Open with Cmd/Ctrl+L
+   - Open with Cmd/Ctrl+K (fallback)
+   - Open via declarative trigger button
    - Browse prompts by category
    - View prompt content
    - Copy prompt to clipboard
    - Close with ESC key
-6. Verify all prompts load correctly
+7. Verify all prompts load correctly
 
 ## Output Format
 
@@ -82,10 +101,13 @@ You are working in a project that needs the Prompt Library drawer component.
 
 A working Prompt Library drawer in the target project that:
 - Opens with Cmd/Ctrl+L (Mac) or Ctrl+L (Windows/Linux)
+- Opens with Cmd/Ctrl+K (Mac) or Ctrl+K (Windows/Linux) as fallback
+- Opens via declarative trigger (data-open-prompt-drawer attribute)
 - Displays prompts grouped by category
 - Allows viewing and copying prompt content
 - Closes with ESC key
 - Works with static HTML (no build tools)
+- Includes minimal verification Start page at /start/index.html
 
 After completing this task, execute /prompts/changelog_prompt.md.
 
