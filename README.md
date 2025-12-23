@@ -24,6 +24,15 @@ After reading these, reference component-level `.md` files and patterns/examples
 
 ---
 
+## Licensing
+
+The Agentic AI UI Control System is free for non-commercial use.
+
+Commercial use, SaaS embedding, or redistribution requires a paid commercial
+license. See LICENSE and COMMERCIAL_LICENSE.md for details.
+
+---
+
 ## How to use this repo with agent tools
 
 This repository provides an "Agentic Bootstrap Component Library" designed for AI agents to assemble consistent Bootstrap-based pages.
