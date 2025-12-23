@@ -4,20 +4,24 @@
 
 This library uses CSS custom properties (variables) defined in `/styles/tokens.css` and custom classes in `/styles/overrides.css`. These tokens provide consistent design values across all components.
 
+**For brand theming**, see **[BRAND_THEMING.md](./BRAND_THEMING.md)** for complete instructions on customizing brand colors.
+
 ## Available Tokens
 
-### Brand Colors
+### Colors: Bootstrap Semantic vs Brand Theming
 
-Defined in `:root` as CSS custom properties:
+**Bootstrap Semantic Colors** (use Bootstrap classes):
+- Use Bootstrap's built-in color utilities: `bg-primary`, `text-success`, `btn-danger`, `border-warning`, etc.
+- These are Bootstrap's default semantic colors and work out of the box.
+- **Example**: `<button class="btn btn-primary">` or `<div class="bg-success text-white">`
 
-- `--brand-primary: #0d6efd` - Primary brand color (blue)
-- `--brand-secondary: #6c757d` - Secondary color (gray)
-- `--brand-success: #198754` - Success state (green)
-- `--brand-danger: #dc3545` - Danger/error state (red)
-- `--brand-warning: #ffc107` - Warning state (yellow)
-- `--brand-info: #0dcaf0` - Informational state (cyan)
+**Brand Theming** (use brand.css + brand utilities):
+- For custom brand colors, use the brand theming system: `brand.css` + `--brand`, `--brand-2`, `--brand-3`, `--brand-4` variables + `.btn-brand`, `.bg-brand`, `.text-brand` utility classes.
+- Brand colors are defined in a user-created `brand.css` file (copied from `brand.template.css`).
+- **Example**: `<button class="btn btn-brand">` or `<div class="bg-brand text-white">`
+- See **[BRAND_THEMING.md](./BRAND_THEMING.md)** for complete brand theming guide.
 
-**Usage**: These tokens are available but Bootstrap's built-in color classes (`bg-primary`, `text-success`, etc.) are preferred for consistency. Use tokens only when Bootstrap classes don't meet the need.
+**Decision Rule**: Use Bootstrap semantic colors (`btn-primary`, `bg-success`) by default. Use brand utilities (`.btn-brand`, `.bg-brand`) only when the project includes `brand.css` with custom brand colors.
 
 ### Border Radius
 
@@ -42,31 +46,76 @@ Defined in `:root` as CSS custom properties:
 
 **Usage**: Applied automatically to `<body>` element. Use Bootstrap typography utilities for text styling.
 
-## Custom Classes
+## Brand Theme
 
-### `.btn-brand`
+**Brand colors are defined by the consumer** via a copied `brand.css` file (see `BRAND_THEMING.md` for setup instructions).
 
-Defined in `/styles/overrides.css`:
+### Brand Variables
 
-- Primary brand button style using `--brand-primary`
-- Hover state: darker shade (`#0b5ed7`)
-- Focus state: Bootstrap focus ring with brand color
+When a project includes `brand.css`, the following CSS variables are available:
 
-**When to Use**:
-- ✅ Primary call-to-action buttons
-- ✅ Main form submit buttons
-- ✅ Primary navigation actions
+- `--brand` - Primary brand color (defined by user)
+- `--brand-2` - Secondary brand color (defined by user)
+- `--brand-3` - Accent brand color (defined by user)
+- `--brand-4` - Highlight/Warn brand color (defined by user)
+- `--brand-text-on` - Text color on brand backgrounds (usually `#fff`)
 
-**When NOT to Use**:
+**Important**: These variables are **NOT** defined in `tokens.css`. They must be defined in a user-created `brand.css` file (copied from `brand.template.css`).
+
+### Brand Utility Classes
+
+Defined in `/styles/overrides.css` (uses brand variables from `brand.css`):
+
+#### Buttons
+- `.btn-brand` - Primary brand button
+- `.btn-brand-2` - Secondary brand button
+- `.btn-brand-3` - Accent brand button
+- `.btn-brand-4` - Highlight brand button
+
+#### Text Colors
+- `.text-brand` - Brand primary text color
+- `.text-brand-2` - Brand secondary text color
+- `.text-brand-3` - Brand accent text color
+- `.text-brand-4` - Brand highlight text color
+
+#### Backgrounds
+- `.bg-brand` - Brand primary background (with readable text)
+- `.bg-brand-2` - Brand secondary background
+- `.bg-brand-3` - Brand accent background
+- `.bg-brand-4` - Brand highlight background
+
+#### Borders
+- `.border-brand` - Brand primary border
+- `.border-brand-2` - Brand secondary border
+- `.border-brand-3` - Brand accent border
+- `.border-brand-4` - Brand highlight border
+
+#### Links & Badges
+- `.link-brand` - Brand colored link
+- `.badge-brand` - Brand colored badge
+- `.badge-brand-2`, `.badge-brand-3`, `.badge-brand-4` - Additional badge variants
+
+**When to Use Brand Classes**:
+- ✅ When project includes `brand.css` with custom brand colors
+- ✅ Primary call-to-action buttons (`.btn-brand`)
+- ✅ Brand-specific styling needs
+
+**When NOT to Use Brand Classes**:
+- ❌ If project doesn't include `brand.css` (use Bootstrap defaults)
+- ❌ For semantic colors (use `btn-success`, `btn-danger`, etc.)
 - ❌ Secondary actions (use `btn-secondary` or `btn-outline-primary`)
-- ❌ Destructive actions (use `btn-danger`)
-- ❌ Cancel buttons (use `btn-secondary`)
-- ❌ Link-styled buttons (use `btn-link`)
 
 **Example**:
 ```html
+<!-- If brand.css exists -->
 <button type="submit" class="btn btn-brand">Save Changes</button>
+<div class="bg-brand text-white p-3">Brand background</div>
+<p class="text-brand">Brand colored text</p>
 ```
+
+See **[BRAND_THEMING.md](./BRAND_THEMING.md)** for complete brand theming guide.
+
+## Custom Classes
 
 ### Card Styling
 
@@ -83,7 +132,7 @@ Applied automatically to `.card` components:
 ### ✅ Allowed
 
 - Using Bootstrap utility classes (`bg-primary`, `text-success`, `rounded-lg`, `shadow-md`, etc.)
-- Using `.btn-brand` for primary brand actions
+- Using brand utility classes (`.btn-brand`, `.bg-brand`, `.text-brand`, etc.) when `brand.css` exists
 - Referencing tokens in custom CSS (only in `/styles/tokens.css` and `/styles/overrides.css`)
 - Using Bootstrap's built-in color/spacing/typography utilities
 
@@ -91,29 +140,44 @@ Applied automatically to `.card` components:
 
 - **Hard-coding hex values** in component HTML or inline styles
   - ❌ `<div style="color: #0d6efd">` 
-  - ✅ `<div class="text-primary">`
+  - ❌ `<button style="background-color: #ff0000">`
+  - ✅ `<div class="text-primary">` or `<div class="text-brand">` (if brand.css exists)
+  - ✅ `<button class="btn btn-brand">`
   
 - **Inline styles** for colors, spacing, or layout
   - ❌ `<div style="margin-bottom: 1rem; color: #dc3545;">`
   - ✅ `<div class="mb-4 text-danger">`
   
-- **Creating new CSS classes** outside of `/styles/tokens.css` and `/styles/overrides.css`
+- **Creating new CSS classes** outside of designated files
   - ❌ Adding `<style>` tags to HTML files
-  - ❌ Creating new CSS files
+  - ❌ Creating new CSS files (except `brand.css` copied from template)
+  - ✅ Only modify: `tokens.css`, `overrides.css`, or user-created `brand.css`
   
 - **Using tokens directly in HTML** (tokens are for CSS only)
   - ❌ `<div style="border-radius: var(--radius-lg)">`
+  - ❌ `<div style="color: var(--brand)">`
   - ✅ `<div class="rounded-lg">` or let card styling apply automatically
+  - ✅ `<div class="text-brand">` (uses brand utility class)
 
 ## Token Modification
 
-**Rule**: Tokens should only be modified in `/styles/tokens.css`. Do not override tokens in component HTML or other CSS files.
+**Rule**: 
+- Base tokens (radius, shadows, typography) should only be modified in `/styles/tokens.css`
+- Brand colors should be defined in a user-created `brand.css` file (copied from `brand.template.css`)
+- Do not override tokens in component HTML or other CSS files
 
-**Process**: If brand colors or design tokens need to change:
-1. Update values in `/styles/tokens.css`
-2. Update values in `/styles/overrides.css` if needed
-3. Test all components that use these tokens
-4. Document changes if significant
+**Process**: 
+- **For base tokens** (radius, shadows, typography):
+  1. Update values in `/styles/tokens.css`
+  2. Test all components that use these tokens
+  3. Document changes if significant
+
+- **For brand colors**:
+  1. Copy `brand.template.css` to your project as `brand.css`
+  2. Set your brand color values in `brand.css`
+  3. Include `brand.css` in your HTML (after `tokens.css`, before `overrides.css`)
+  4. Use brand utility classes (`.btn-brand`, `.bg-brand`, etc.)
+  5. See `BRAND_THEMING.md` for complete instructions
 
 ## Bootstrap Utilities vs Tokens
 

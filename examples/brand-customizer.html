@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" id="themeRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Customizer - Bootstrap Agentic Component Library</title>
+    
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/overrides.css">
+    
+    <!-- Dynamic Brand Variables (updated by JavaScript) -->
+    <style id="brandVars">
+        :root {
+            --brand: #0d6efd;
+            --brand-2: #6c757d;
+            --brand-3: #198754;
+            --brand-4: #dc3545;
+            --brand-text-on: #fff;
+        }
+        :root[data-bs-theme="dark"] {
+            --brand: #4dabf7;
+            --brand-2: #868e96;
+            --brand-3: #51cf66;
+            --brand-4: #ff6b6b;
+            --brand-text-on: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Brand Customizer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Customizer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../BRAND_THEMING.md">Documentation</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <label class="form-check-label me-3" for="themeToggle">Dark Mode</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Brand Color Customizer</h1>
+        <p class="lead mb-5">Customize your brand colors and preview them in real-time. Copy the generated CSS into your <code>brand.css</code> file.</p>
+
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Color Controls</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="brand1" class="form-label">Brand Primary</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="brand1" value="#0d6efd" onchange="updateBrandColors()">
+                                <input type="text" class="form-control" id="brand1Text" value="#0d6efd" onchange="updateBrandColors()" pattern="^#[0-9A-Fa-f]{6}$">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brand2" class="form-label">Brand Secondary</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="brand2" value="#6c757d" onchange="updateBrandColors()">
+                                <input type="text" class="form-control" id="brand2Text" value="#6c757d" onchange="updateBrandColors()" pattern="^#[0-9A-Fa-f]{6}$">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brand3" class="form-label">Brand Accent</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="brand3" value="#198754" onchange="updateBrandColors()">
+                                <input type="text" class="form-control" id="brand3Text" value="#198754" onchange="updateBrandColors()" pattern="^#[0-9A-Fa-f]{6}$">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brand4" class="form-label">Brand Highlight</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="brand4" value="#dc3545" onchange="updateBrandColors()">
+                                <input type="text" class="form-control" id="brand4Text" value="#dc3545" onchange="updateBrandColors()" pattern="^#[0-9A-Fa-f]{6}$">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textOn" class="form-label">Text on Brand (usually #fff)</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="textOn" value="#ffffff" onchange="updateBrandColors()">
+                                <input type="text" class="form-control" id="textOnText" value="#fff" onchange="updateBrandColors()" pattern="^#[0-9A-Fa-f]{6}$">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary w-100" onclick="resetColors()">Reset to Defaults</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-header bg-brand">
+                        <h5 class="mb-0 text-white">Preview Area</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="mb-3">Buttons</h6>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <button type="button" class="btn btn-brand">Brand Primary</button>
+                            <button type="button" class="btn btn-brand-2">Brand Secondary</button>
+                            <button type="button" class="btn btn-brand-3">Brand Accent</button>
+                            <button type="button" class="btn btn-brand-4">Brand Highlight</button>
+                        </div>
+
+                        <h6 class="mb-3">Text Colors</h6>
+                        <div class="mb-4">
+                            <p class="text-brand mb-1">This is brand primary text color.</p>
+                            <p class="text-brand-2 mb-1">This is brand secondary text color.</p>
+                            <p class="text-brand-3 mb-1">This is brand accent text color.</p>
+                            <p class="text-brand-4 mb-1">This is brand highlight text color.</p>
+                        </div>
+
+                        <h6 class="mb-3">Backgrounds</h6>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <div class="bg-brand p-2 rounded">Brand</div>
+                            <div class="bg-brand-2 p-2 rounded">Brand 2</div>
+                            <div class="bg-brand-3 p-2 rounded">Brand 3</div>
+                            <div class="bg-brand-4 p-2 rounded">Brand 4</div>
+                        </div>
+
+                        <h6 class="mb-3">Borders</h6>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <div class="border border-brand p-2 rounded">Brand Border</div>
+                            <div class="border border-brand-2 p-2 rounded">Brand 2 Border</div>
+                            <div class="border border-brand-3 p-2 rounded">Brand 3 Border</div>
+                            <div class="border border-brand-4 p-2 rounded">Brand 4 Border</div>
+                        </div>
+
+                        <h6 class="mb-3">Links & Badges</h6>
+                        <div class="mb-4">
+                            <p>Visit our <a href="#" class="link-brand">brand colored link</a> for more information.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge badge-brand">Brand Badge</span>
+                                <span class="badge badge-brand-2">Brand 2</span>
+                                <span class="badge badge-brand-3">Brand 3</span>
+                                <span class="badge badge-brand-4">Brand 4</span>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Card Example</h6>
+                        <div class="card border-brand">
+                            <div class="card-header bg-brand text-white">
+                                <h6 class="mb-0">Brand Header</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-brand mb-2">This card uses brand colors.</p>
+                                <button type="button" class="btn btn-brand btn-sm">Action</button>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3 mt-4">Table Example</h6>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Product A</td>
+                                    <td><span class="badge badge-brand">Active</span></td>
+                                    <td>
+                                        <button type="button" class="btn btn-brand btn-sm">Edit</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm ms-2">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Product B</td>
+                                    <td><span class="badge badge-brand-2">Pending</span></td>
+                                    <td>
+                                        <button type="button" class="btn btn-brand-2 btn-sm">Edit</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm ms-2">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h6 class="mb-3 mt-4">Alert Example</h6>
+                        <div class="alert alert-info d-flex align-items-center">
+                            <span class="badge badge-brand me-2">New</span>
+                            This is an alert with a brand badge.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="mb-0">Generated CSS</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-3">Copy this CSS into your <code>brand.css</code> file:</p>
+                <div class="alert alert-info mb-3">
+                    <strong>CSS Load Order:</strong> Include your CSS files in this exact order:
+                    <ol class="mb-0 mt-2">
+                        <li>Bootstrap CDN</li>
+                        <li><code>styles/tokens.css</code></li>
+                        <li><code>styles/brand.css</code> (this file)</li>
+                        <li><code>styles/overrides.css</code></li>
+                    </ol>
+                </div>
+                <textarea id="generatedCSS" class="form-control font-monospace" rows="25" readonly></textarea>
+                <button type="button" class="btn btn-primary mt-3" onclick="copyCSS()">Copy CSS to Clipboard</button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Bootstrap JavaScript Bundle via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+    <script>
+        // Sync color inputs
+        function syncColorInputs() {
+            const colorInputs = ['brand1', 'brand2', 'brand3', 'brand4', 'textOn'];
+            colorInputs.forEach(id => {
+                const colorInput = document.getElementById(id);
+                const textInput = document.getElementById(id + 'Text');
+                if (colorInput && textInput) {
+                    colorInput.addEventListener('input', () => {
+                        textInput.value = colorInput.value;
+                        updateBrandColors();
+                    });
+                    textInput.addEventListener('input', () => {
+                        if (/^#[0-9A-Fa-f]{6}$/.test(textInput.value)) {
+                            colorInput.value = textInput.value;
+                            updateBrandColors();
+                        }
+                    });
+                }
+            });
+        }
+
+        // Update brand colors
+        function updateBrandColors() {
+            const brand1 = document.getElementById('brand1').value;
+            const brand2 = document.getElementById('brand2').value;
+            const brand3 = document.getElementById('brand3').value;
+            const brand4 = document.getElementById('brand4').value;
+            const textOn = document.getElementById('textOn').value;
+
+            // Update text inputs
+            document.getElementById('brand1Text').value = brand1;
+            document.getElementById('brand2Text').value = brand2;
+            document.getElementById('brand3Text').value = brand3;
+            document.getElementById('brand4Text').value = brand4;
+            document.getElementById('textOnText').value = textOn;
+
+            // Update CSS variables
+            const style = document.getElementById('brandVars');
+            const isDark = document.getElementById('themeRoot').getAttribute('data-bs-theme') === 'dark';
+            
+            if (isDark) {
+                // For dark mode, use slightly brighter versions
+                const darkBrand1 = adjustBrightness(brand1, 1.3);
+                const darkBrand2 = adjustBrightness(brand2, 1.2);
+                const darkBrand3 = adjustBrightness(brand3, 1.3);
+                const darkBrand4 = adjustBrightness(brand4, 1.2);
+                
+                style.textContent = `
+:root {
+    --brand: ${brand1};
+    --brand-2: ${brand2};
+    --brand-3: ${brand3};
+    --brand-4: ${brand4};
+    --brand-text-on: ${textOn};
+}
+:root[data-bs-theme="dark"] {
+    --brand: ${darkBrand1};
+    --brand-2: ${darkBrand2};
+    --brand-3: ${darkBrand3};
+    --brand-4: ${darkBrand4};
+    --brand-text-on: ${textOn};
+}
+                `;
+            } else {
+                style.textContent = `
+:root {
+    --brand: ${brand1};
+    --brand-2: ${brand2};
+    --brand-3: ${brand3};
+    --brand-4: ${brand4};
+    --brand-text-on: ${textOn};
+}
+:root[data-bs-theme="dark"] {
+    --brand: ${adjustBrightness(brand1, 1.3)};
+    --brand-2: ${adjustBrightness(brand2, 1.2)};
+    --brand-3: ${adjustBrightness(brand3, 1.3)};
+    --brand-4: ${adjustBrightness(brand4, 1.2)};
+    --brand-text-on: ${textOn};
+}
+                `;
+            }
+
+            updateGeneratedCSS();
+        }
+
+        // Adjust brightness of hex color
+        function adjustBrightness(hex, factor) {
+            // Ensure hex is 6 characters
+            let hexClean = hex.replace('#', '');
+            if (hexClean.length === 3) {
+                // Expand shorthand (#abc -> #aabbcc)
+                hexClean = hexClean.split('').map(c => c + c).join('');
+            }
+            const num = parseInt(hexClean, 16);
+            if (isNaN(num)) return hex; // Return original if invalid
+            
+            const r = Math.min(255, Math.floor((num >> 16) * factor));
+            const g = Math.min(255, Math.floor(((num >> 8) & 0x00FF) * factor));
+            const b = Math.min(255, Math.floor((num & 0x0000FF) * factor));
+            return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0').toUpperCase();
+        }
+
+        // Update generated CSS textarea
+        function updateGeneratedCSS() {
+            const brand1 = document.getElementById('brand1').value;
+            const brand2 = document.getElementById('brand2').value;
+            const brand3 = document.getElementById('brand3').value;
+            const brand4 = document.getElementById('brand4').value;
+            const textOn = document.getElementById('textOn').value;
+
+            const darkBrand1 = adjustBrightness(brand1, 1.3);
+            const darkBrand2 = adjustBrightness(brand2, 1.2);
+            const darkBrand3 = adjustBrightness(brand3, 1.3);
+            const darkBrand4 = adjustBrightness(brand4, 1.2);
+
+            const css = `/* Brand Theme
+ * Copy this into your brand.css file
+ */
+
+:root {
+    /* Brand Color Palette */
+    --brand: ${brand1};        /* Primary brand color */
+    --brand-2: ${brand2};      /* Secondary brand color */
+    --brand-3: ${brand3};       /* Accent brand color */
+    --brand-4: ${brand4};       /* Highlight/Warn brand color */
+    
+    /* Text Color on Brand Backgrounds */
+    --brand-text-on: ${textOn};
+    
+    /* Optional: Semantic Aliases */
+    --brand-primary: var(--brand);
+    --brand-secondary: var(--brand-2);
+    --brand-accent: var(--brand-3);
+    --brand-warn: var(--brand-4);
+}
+
+/* Dark Mode Overrides */
+:root[data-bs-theme="dark"] {
+    --brand: ${darkBrand1};        /* Brighter primary for dark mode */
+    --brand-2: ${darkBrand2};      /* Adjusted secondary */
+    --brand-3: ${darkBrand3};      /* Brighter accent */
+    --brand-4: ${darkBrand4};      /* Adjusted highlight */
+    --brand-text-on: ${textOn};   /* Usually stays white */
+    
+    /* Update semantic aliases if needed */
+    --brand-primary: var(--brand);
+    --brand-secondary: var(--brand-2);
+    --brand-accent: var(--brand-3);
+    --brand-warn: var(--brand-4);
+}`;
+
+            document.getElementById('generatedCSS').value = css;
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            const root = document.getElementById('themeRoot');
+            const isDark = root.getAttribute('data-bs-theme') === 'dark';
+            root.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
+            updateBrandColors();
+        }
+
+        // Reset colors
+        function resetColors() {
+            document.getElementById('brand1').value = '#0d6efd';
+            document.getElementById('brand2').value = '#6c757d';
+            document.getElementById('brand3').value = '#198754';
+            document.getElementById('brand4').value = '#dc3545';
+            document.getElementById('textOn').value = '#ffffff';
+            updateBrandColors();
+        }
+
+        // Copy CSS to clipboard
+        function copyCSS() {
+            const textarea = document.getElementById('generatedCSS');
+            textarea.select();
+            document.execCommand('copy');
+            alert('CSS copied to clipboard!');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            syncColorInputs();
+            updateBrandColors();
+        });
+    </script>
+</body>
+</html>
+

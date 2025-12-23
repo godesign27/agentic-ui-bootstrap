@@ -10,6 +10,7 @@ Before using this repository, read the root-level instruction files in this orde
 4. **DESIGN_PRINCIPLES.md** - Design decision framework and component restrictions
 5. **ACCESSIBILITY.md** - WCAG 2.1 AA requirements and mandatory accessibility rules
 6. **TOKENS_REFERENCE.md** - Available design tokens and CSS usage rules
+7. **BRAND_THEMING.md** - Brand color theming system (if customizing brand colors)
 
 Each file serves a specific purpose:
 - **AGENT_RULES.md**: Behavioral contracts and composition rules
@@ -17,6 +18,7 @@ Each file serves a specific purpose:
 - **DESIGN_PRINCIPLES.md**: When and how to use components appropriately
 - **ACCESSIBILITY.md**: Mandatory accessibility standards and checklists
 - **TOKENS_REFERENCE.md**: Design token usage and CSS constraints
+- **BRAND_THEMING.md**: Brand color customization guide and utility classes
 
 After reading these, reference component-level `.md` files and patterns/examples as needed.
 
@@ -43,9 +45,11 @@ This repository provides an "Agentic Bootstrap Component Library" designed for A
 - `/AGENT_RULES.md` - Rules for agent behavior and composition guidelines
 - `/BOOTSTRAP_VERSION.md` - Bootstrap version and CDN links
 - `/COMPONENTS_INDEX.md` - Complete inventory of available components
+- `/BRAND_THEMING.md` - Brand color theming system guide
 - `/assets/app-shell.html` - Base HTML template with Bootstrap CDN
-- `/styles/tokens.css` - Brand variables and design tokens
-- `/styles/overrides.css` - Minimal custom CSS overrides
+- `/styles/tokens.css` - Base design tokens (radius, shadows, typography)
+- `/styles/brand.template.css` - Template for custom brand colors
+- `/styles/overrides.css` - Brand utility classes and minimal overrides
 
 ### Component Structure
 
@@ -89,3 +93,24 @@ This repository is optimized for AI agents to build consistent Bootstrap-based w
 - **CDN Only**: Bootstrap loaded via CDN, no build tools or npm dependencies
 
 For detailed rules and guidelines, see `/AGENT_RULES.md`.
+
+---
+
+## Brand Theming
+
+This library includes a **token-based brand theming system** that allows you to customize brand colors without modifying Bootstrap or requiring build tools.
+
+### Quick Start
+
+1. **Copy the template**: Copy `/styles/brand.template.css` to your project as `/styles/brand.css`
+2. **Set your colors**: Edit `brand.css` with your brand color values
+3. **Include in HTML**: Load `brand.css` after `tokens.css`, before `overrides.css`
+4. **Use brand classes**: Apply `.btn-brand`, `.bg-brand`, `.text-brand`, etc. in your components
+
+### Resources
+
+- **[BRAND_THEMING.md](./BRAND_THEMING.md)** - Complete theming guide with examples
+- **[/examples/brand-customizer.html](./examples/brand-customizer.html)** - Visual color customizer tool
+- **[/styles/brand.template.css](./styles/brand.template.css)** - Template file to copy
+
+The brand theming system supports both light and dark modes via Bootstrap's `data-bs-theme` attribute.

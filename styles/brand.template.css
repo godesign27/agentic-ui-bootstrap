@@ -1,0 +1,74 @@
+/* Brand Theme Template
+ * 
+ * INSTRUCTIONS:
+ * 1. Copy this file to your project as 'brand.css' (or any name you prefer)
+ * 2. Replace the color values below with your brand colors
+ * 3. Include this file in your HTML after tokens.css, before overrides.css
+ * 
+ * CSS Load Order:
+ * 1. Bootstrap CDN
+ * 2. tokens.css
+ * 3. brand.css (this file)
+ * 4. overrides.css
+ */
+
+:root {
+    /* Brand Color Palette
+     * Define your 4 brand colors here
+     */
+    --brand: #0d6efd;        /* Primary brand color */
+    --brand-2: #6c757d;      /* Secondary brand color */
+    --brand-3: #198754;       /* Accent brand color */
+    --brand-4: #dc3545;       /* Highlight/Warn brand color */
+    
+    /* Text Color on Brand Backgrounds
+     * Usually white (#fff) or a very light color
+     */
+    --brand-text-on: #fff;
+    
+    /* Optional: Semantic Aliases
+     * Map semantic names to your brand colors if desired
+     */
+    --brand-primary: var(--brand);
+    --brand-secondary: var(--brand-2);
+    --brand-accent: var(--brand-3);
+    --brand-warn: var(--brand-4);
+}
+
+/* Dark Mode Overrides
+ * 
+ * Bootstrap 5.3 supports dark mode via data-bs-theme="dark"
+ * Optionally define different brand colors for dark mode
+ * If not defined, light mode colors will be used (may have contrast issues)
+ */
+:root[data-bs-theme="dark"] {
+    /* Brighter/adjusted colors for dark backgrounds
+     * Adjust these values for your dark mode design
+     */
+    --brand: #4dabf7;        /* Brighter primary for dark mode */
+    --brand-2: #868e96;      /* Adjusted secondary */
+    --brand-3: #51cf66;      /* Brighter accent */
+    --brand-4: #ff6b6b;      /* Adjusted highlight */
+    --brand-text-on: #fff;   /* Usually stays white */
+    
+    /* Update semantic aliases if needed */
+    --brand-primary: var(--brand);
+    --brand-secondary: var(--brand-2);
+    --brand-accent: var(--brand-3);
+    --brand-warn: var(--brand-4);
+}
+
+/* 
+ * USAGE NOTES:
+ * 
+ * After setting your colors, use the brand utility classes defined in overrides.css:
+ * - .btn-brand, .btn-brand-2, .btn-brand-3, .btn-brand-4
+ * - .bg-brand, .bg-brand-2, .bg-brand-3, .bg-brand-4
+ * - .text-brand, .text-brand-2, .text-brand-3, .text-brand-4
+ * - .border-brand, .border-brand-2, .border-brand-3, .border-brand-4
+ * - .link-brand
+ * - .badge-brand
+ * 
+ * See BRAND_THEMING.md for complete usage guide.
+ */
+

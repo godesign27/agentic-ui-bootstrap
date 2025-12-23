@@ -11,20 +11,170 @@
     transition: box-shadow 0.2s ease-in-out;
 }
 
-/* Brand Button */
+/* Brand Utility Classes
+ * These classes use CSS variables defined in brand.css
+ * If brand.css is not included, these will fall back to transparent/inherit
+ */
+
+/* Brand Text Colors */
+.text-brand {
+    color: var(--brand, inherit) !important;
+}
+
+.text-brand-2 {
+    color: var(--brand-2, inherit) !important;
+}
+
+.text-brand-3 {
+    color: var(--brand-3, inherit) !important;
+}
+
+.text-brand-4 {
+    color: var(--brand-4, inherit) !important;
+}
+
+/* Brand Background Colors */
+.bg-brand {
+    background-color: var(--brand, transparent) !important;
+    color: var(--brand-text-on, #fff) !important;
+}
+
+.bg-brand-2 {
+    background-color: var(--brand-2, transparent) !important;
+    color: var(--brand-text-on, #fff) !important;
+}
+
+.bg-brand-3 {
+    background-color: var(--brand-3, transparent) !important;
+    color: var(--brand-text-on, #fff) !important;
+}
+
+.bg-brand-4 {
+    background-color: var(--brand-4, transparent) !important;
+    color: var(--brand-text-on, #fff) !important;
+}
+
+/* Brand Border Colors */
+.border-brand {
+    border-color: var(--brand, currentColor) !important;
+}
+
+.border-brand-2 {
+    border-color: var(--brand-2, currentColor) !important;
+}
+
+.border-brand-3 {
+    border-color: var(--brand-3, currentColor) !important;
+}
+
+.border-brand-4 {
+    border-color: var(--brand-4, currentColor) !important;
+}
+
+/* Brand Buttons */
 .btn-brand {
-    background-color: var(--brand-primary);
-    border-color: var(--brand-primary);
-    color: #fff;
+    background-color: var(--brand, #0d6efd);
+    border-color: var(--brand, #0d6efd);
+    color: var(--brand-text-on, #fff);
 }
 
 .btn-brand:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-    color: #fff;
+    background-color: var(--brand, #0d6efd);
+    border-color: var(--brand, #0d6efd);
+    filter: brightness(0.9);
+    color: var(--brand-text-on, #fff);
 }
 
-.btn-brand:focus {
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+.btn-brand:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-2 {
+    background-color: var(--brand-2, #6c757d);
+    border-color: var(--brand-2, #6c757d);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-2:hover {
+    background-color: var(--brand-2, #6c757d);
+    border-color: var(--brand-2, #6c757d);
+    filter: brightness(0.9);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-2:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-3 {
+    background-color: var(--brand-3, #198754);
+    border-color: var(--brand-3, #198754);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-3:hover {
+    background-color: var(--brand-3, #198754);
+    border-color: var(--brand-3, #198754);
+    filter: brightness(0.9);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-3:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-4 {
+    background-color: var(--brand-4, #dc3545);
+    border-color: var(--brand-4, #dc3545);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-4:hover {
+    background-color: var(--brand-4, #dc3545);
+    border-color: var(--brand-4, #dc3545);
+    filter: brightness(0.9);
+    color: var(--brand-text-on, #fff);
+}
+
+.btn-brand-4:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+    color: var(--brand-text-on, #fff);
+}
+
+/* Brand Links */
+.link-brand {
+    color: var(--brand, #0d6efd);
+    text-decoration: none;
+}
+
+.link-brand:hover,
+.link-brand:focus {
+    color: var(--brand, #0d6efd);
+    text-decoration: underline;
+    filter: brightness(0.8);
+}
+
+/* Brand Badges */
+.badge-brand {
+    background-color: var(--brand, #0d6efd);
+    color: var(--brand-text-on, #fff);
+}
+
+.badge-brand-2 {
+    background-color: var(--brand-2, #6c757d);
+    color: var(--brand-text-on, #fff);
+}
+
+.badge-brand-3 {
+    background-color: var(--brand-3, #198754);
+    color: var(--brand-text-on, #fff);
+}
+
+.badge-brand-4 {
+    background-color: var(--brand-4, #dc3545);
+    color: var(--brand-text-on, #fff);
 }
 
