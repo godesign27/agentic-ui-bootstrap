@@ -1,14 +1,32 @@
-You are an agentic AI assistant initializing a UI project
+You are an agentic AI assistant initializing project context
 using the Agentic AI UI Control System (Bootstrap implementation).
 
-Your task is to connect to and use the following repository
-as the authoritative source for UI composition:
+THIS PROMPT IS FOR INITIALIZATION ONLY.
+It is NOT a request to build, design, or generate UI.
+
+Your task is to connect to and understand the following repository
+as the authoritative source for future UI composition:
 
 Repository:
 https://github.com/godesign27/agentic-ui-bootstrap
 
 Framework:
-Bootstrap 5 (CDN-based)
+Bootstrap 5 (CDN-based, HTML-first)
+
+────────────────────────────────
+STEP 0 — MODE DECLARATION (MANDATORY)
+
+You are in CONTEXT-LOADING MODE ONLY.
+
+Do NOT:
+- Generate UI
+- Create pages
+- Produce layouts
+- Apply styling
+- Build a website
+- Make assumptions about project requirements
+
+Only load, understand, and confirm readiness.
 
 ────────────────────────────────
 STEP 1 — Load Repository Context
@@ -18,8 +36,8 @@ If your tool supports repository access or indexing:
 
 Treat this repository as read-only governance + implementation.
 
-Before generating any UI:
-- Review the following files to understand constraints and usage:
+Before any future generation:
+- Review the following files:
   1. README.md
   2. AGENT_RULES.md
   3. COMPONENTS_INDEX.md
@@ -28,42 +46,40 @@ Before generating any UI:
   6. TOKENS_REFERENCE.md
   7. BRAND_THEMING.md
 
-Do not invent components or patterns outside what is defined here.
+Do not invent components or patterns.
 
 ────────────────────────────────
-STEP 2 — Project Initialization
+STEP 2 — COMPATIBILITY CHECK (MANDATORY)
 
-If no local project exists, initialize one using:
+Determine whether your environment can support:
+- Plain HTML output
+- Bootstrap 5 via CDN
+- Static markup composition
+- No framework translation
 
-- Plain HTML (no build tools)
-- Bootstrap loaded via CDN:
-  - https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css
-  - https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js
-
-Create the following local files if they do not exist:
-- index.html
-- /styles/tokens.css
-- /styles/overrides.css
-
-Use the app shell provided in the repository as the base layout.
+IF NOT COMPATIBLE:
+- STOP
+- Report incompatibility
+- Do NOT adapt or substitute
+- Do NOT generate UI
 
 ────────────────────────────────
-STEP 3 — How to Build UI
+STEP 3 — Project Setup Awareness
 
-When asked to create UI:
-- Compose pages by copying approved component HTML from the repo
-- Use Bootstrap utility classes for layout and spacing
-- Apply brand tokens only via tokens.css and overrides.css
-- Validate against accessibility rules before output
+If compatible, be aware that a future prompt may ask you to:
+- Initialize index.html
+- Reference Bootstrap CDN assets
+- Use the repository app shell
+- Apply brand tokens via CSS
 
-If a requested UI cannot be built using existing components:
-- Stop
-- State the limitation clearly
-- Do not improvise
+Do NOT perform these steps yet.
 
 ────────────────────────────────
-CONFIRMATION
+CONFIRMATION (REQUIRED OUTPUT)
 
-Before proceeding with any UI generation:
-Briefly confirm that you have loaded the repository context
-and are ready to build using Bootstrap and the approved components only.
+Respond with:
+- Confirmation that the repository context is loaded
+- Whether the environment is compatible
+- A statement that no UI has been generated
+
+Do not include any UI output.
