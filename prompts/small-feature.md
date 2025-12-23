@@ -21,3 +21,4 @@ You are working in the repository: bootstrap-agentic-ai.
 
 [Specific deliverable description]
 
+After completing this task, execute /prompts/changelog_prompt.md.

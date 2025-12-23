@@ -44,3 +44,4 @@ You are working in the repository: bootstrap-agentic-ai.
 
 [Brief, non-technical summary for stakeholders]
 
+After completing this task, execute /prompts/changelog_prompt.md.
