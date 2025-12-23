@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Viewer - Bootstrap Agentic Component Library</title>
+    
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/overrides.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Component Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Viewer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Component Viewer</h1>
+        <p class="lead mb-4">Use this page to view individual component snippets. To view a component, add <code>?component=COMPONENT_NAME</code> to the URL.</p>
+        
+        <div class="alert alert-info">
+            <strong>Usage:</strong> Navigate to <code>viewer.html?component=alert</code> or <code>viewer.html?component=button</code> to view specific components.
+        </div>
+
+        <div id="component-container" class="mt-4">
+            <p class="text-muted">No component specified. Add <code>?component=COMPONENT_NAME</code> to the URL.</p>
+        </div>
+    </main>
+    
+    <!-- Bootstrap JavaScript Bundle via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+    <script>
+        // Simple component loader
+        const urlParams = new URLSearchParams(window.location.search);
+        const componentName = urlParams.get('component');
+        
+        if (componentName) {
+            const container = document.getElementById('component-container');
+            container.innerHTML = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>';
+            
+            // Handle form components in subdirectory (e.g., "form/input")
+            const componentPath = componentName.includes('/') 
+                ? `./${componentName}.html` 
+                : `./${componentName}/${componentName}.html`;
+            
+            fetch(componentPath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Component not found');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    const displayName = componentName.includes('/') 
+                        ? componentName.split('/').pop().charAt(0).toUpperCase() + componentName.split('/').pop().slice(1)
+                        : componentName.charAt(0).toUpperCase() + componentName.slice(1);
+                    
+                    container.innerHTML = `
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">${displayName} Component</h5>
+                            </div>
+                            <div class="card-body">
+                                ${html}
+                            </div>
+                        </div>
+                    `;
+                })
+                .catch(error => {
+                    container.innerHTML = `
+                        <div class="alert alert-danger">
+                            <strong>Error:</strong> Could not load component "${componentName}". Make sure the component exists in the components folder.
+                        </div>
+                    `;
+                });
+        }
+    </script>
+</body>
+</html>
+
