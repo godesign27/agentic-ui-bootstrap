@@ -1,49 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello World - Prompt Library</title>
+    <!-- Bootstrap CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/assets/prompt-drawer/prompt-drawer.css">
     <style>
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-        }
-        .hello-world-container {
-            text-align: center;
-            padding: 2rem;
-        }
-        .hello-world-container h1 {
-            margin-bottom: 1rem;
-            color: #212529;
-        }
-        .hello-world-container p {
-            margin-bottom: 1.5rem;
-            color: #6c757d;
-        }
-        .hello-world-container button {
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-        }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+      .notification-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #198754;
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .notification-banner.hidden {
+        display: none;
+      }
+      .notification-banner p {
+        margin: 0;
+        color: white;
+        font-size: 14px;
+      }
+      .notification-banner .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0 8px;
+        line-height: 1;
+        opacity: 0.8;
+      }
+      .notification-banner .close-btn:hover {
+        opacity: 1;
+      }
+      .btn-group {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      button, .btn {
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+      button:hover, .btn:hover {
+        background-color: #0b5ed7;
+      }
+      .btn-secondary {
+        background-color: #6c757d;
+      }
+      .btn-secondary:hover {
+        background-color: #5c636a;
+      }
+      kbd {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 13px;
+        font-family: monospace;
+        margin-left: 8px;
+      }
     </style>
-</head>
-<body>
-    <div class="hello-world-container">
-        <h1>Hello World</h1>
-        <p>You are ready to start building your project.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button class="btn btn-primary" data-open-prompt-drawer>Prompt Library ⌘L</button>
-            <button class="btn btn-primary" onclick="window.location.href='/ui-kit/'">UI Kit</button>
-        </div>
+  </head>
+  <body>
+    <div class="notification-banner" id="notificationBanner">
+      <p>Prompt Library installed. Use Cmd/Ctrl+L or click the button below.</p>
+      <button class="close-btn" id="closeNotification" aria-label="Close notification">×</button>
+    </div>
+
+    <h1>Hello World</h1>
+    <h2>Library</h2>
+    <div class="btn-group">
+      <button data-open-prompt-drawer>Prompt <kbd>⌘L</kbd></button>
+      <a href="/ui-kit/" class="btn btn-secondary">UI Kit <kbd>⌘U</kbd></a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     <script src="/public/assets/prompt-drawer/prompt-drawer.js" defer></script>
-</body>
-</html>
+    <script>
+      // Handle notification banner dismissal
+      const banner = document.getElementById('notificationBanner');
+      const closeBtn = document.getElementById('closeNotification');
 
+      // Check if banner was previously dismissed
+      if (localStorage.getItem('notificationDismissed') === 'true') {
+        banner.classList.add('hidden');
+      }
+
+      // Handle close button click
+      closeBtn.addEventListener('click', () => {
+        banner.classList.add('hidden');
+        localStorage.setItem('notificationDismissed', 'true');
+      });
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        const isInputElement = e.target.tagName === 'INPUT' ||
+                             e.target.tagName === 'TEXTAREA' ||
+                             e.target.tagName === 'SELECT' ||
+                             e.target.isContentEditable;
+        
+        if (isInputElement) {
+          return;
+        }
+        
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        const modifier = isMac ? e.metaKey : e.ctrlKey;
+        
+        if (e.shiftKey || e.altKey) {
+          return;
+        }
+        
+        if (modifier && e.key === 'u') {
+          e.preventDefault();
+          window.location.href = '/ui-kit/';
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
