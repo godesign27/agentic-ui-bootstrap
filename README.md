@@ -205,3 +205,39 @@ This repository includes an out-of-the-box Prompt Library drawer that provides q
 - Works with static HTML (no build tools)
 
 The Prompt Library demo page is located at `/index.html` (root) and uses assets from `/public/assets/prompt-drawer/`.
+
+---
+
+## UI Kit Library
+
+This repository includes a browsable UI Kit that provides visual access to all components, helping verify availability and avoid hallucination.
+
+### Quick Start
+
+1. **Start a local server** (if not already running):
+   ```bash
+   python3 -m http.server 8080
+   ```
+
+2. **Access the UI Kit**:
+   - Click the "UI Kit" button on the start page, or
+   - Navigate directly to: `http://localhost:8080/ui-kit/`
+
+### Features
+
+- Browse all components organized by category
+- Search components by name or description
+- View component previews in iframe
+- Copy component HTML snippets with one click
+- See file paths for each component
+- No build tools required - works with static HTML
+
+### Purpose
+
+The UI Kit serves as a visual component gallery that:
+- Helps verify which components are available
+- Prevents hallucination by showing actual component structure
+- Provides quick access to component snippets
+- Shows component previews before copying
+
+The UI Kit is located at `/ui-kit/index.html` and uses `/ui-kit/UI_KIT_INDEX.json` as its data source.

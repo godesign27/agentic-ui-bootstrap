@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Kit Library - Bootstrap Components</title>
+  <!-- Bootstrap CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/overrides.css">
+  <!-- UI Kit Styles -->
+  <link rel="stylesheet" href="/ui-kit/ui-kit.css">
+</head>
+<body>
+  <div class="uikit-overlay" id="sidebar-overlay"></div>
+
+  <div class="uikit-layout">
+    <aside class="uikit-sidebar" id="sidebar">
+      <div class="uikit-sidebar-header">
+        <h1 class="uikit-logo">UI Kit Library</h1>
+        <span class="uikit-version" id="bootstrap-version">Bootstrap 5.3.8</span>
+      </div>
+
+      <div class="uikit-view-tabs" id="view-tabs">
+        <button class="uikit-view-tab active" data-view="components">Components</button>
+        <button class="uikit-view-tab" data-view="colors">Colors</button>
+      </div>
+
+      <div class="uikit-search" id="search-container">
+        <input
+          type="text"
+          class="uikit-search-input"
+          id="search-input"
+          placeholder="Search components..."
+          autocomplete="off"
+        >
+      </div>
+
+      <nav class="uikit-categories" id="categories-list">
+      </nav>
+
+      <div class="uikit-sidebar-footer">
+        <a href="/" target="_self">Back to Start</a>
+        &nbsp;|&nbsp;
+        <a href="https://getbootstrap.com/docs/5.3/" target="_blank" rel="noopener">Bootstrap Docs</a>
+      </div>
+    </aside>
+
+    <main class="uikit-main">
+      <header class="uikit-header">
+        <div class="uikit-header-row">
+          <div>
+            <button class="uikit-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+            <h2 class="uikit-title" id="page-title">Component Library</h2>
+            <p class="uikit-subtitle" id="page-subtitle">Browse, preview, and copy Bootstrap 5.3 components for your project</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="uikit-content-wrapper">
+        <div class="uikit-content" id="main-content">
+          <div id="components-view">
+            <div class="uikit-results-info" id="results-info">Loading components...</div>
+            <div class="uikit-grid" id="component-grid"></div>
+          </div>
+
+          <div id="colors-view" class="uikit-colors-view" style="display: none;">
+            <div class="uikit-colors-header">
+              <div class="uikit-brand-toggle">
+                <span class="uikit-brand-toggle-label">Preview on:</span>
+                <button class="uikit-brand-toggle-btn active" data-theme="light">Light</button>
+                <button class="uikit-brand-toggle-btn" data-theme="dark">Dark</button>
+              </div>
+            </div>
+
+            <div class="uikit-colors-scales" id="colors-scales">
+              <div class="uikit-colors-group">
+                <h2 class="uikit-colors-group-title">Bootstrap Colors</h2>
+                <p class="uikit-colors-group-desc">Standard Bootstrap theme and utility colors</p>
+
+                <div class="uikit-brand-section">
+                  <h3 class="uikit-brand-section-title">Theme Colors</h3>
+                  <div class="uikit-brand-grid" id="bootstrap-theme-colors"></div>
+                </div>
+
+                <div class="uikit-brand-section">
+                  <h3 class="uikit-brand-section-title">Gray Scale</h3>
+                  <div class="uikit-brand-grid" id="bootstrap-grays"></div>
+                </div>
+              </div>
+
+              <div class="uikit-colors-divider"></div>
+
+              <div class="uikit-colors-group">
+                <h2 class="uikit-colors-group-title">Brand Colors</h2>
+                <p class="uikit-colors-group-desc">Custom brand color scales (50-900)</p>
+
+                <div class="uikit-brand-section">
+                  <h3 class="uikit-brand-section-title">Brand Primary (brand-1)</h3>
+                  <p class="uikit-brand-section-desc">Base: <span id="brand-1-base">--</span></p>
+                  <div class="uikit-brand-grid" data-scale="brand-1"></div>
+                </div>
+
+                <div class="uikit-brand-section">
+                  <h3 class="uikit-brand-section-title">Brand Secondary 1 (brand-2)</h3>
+                  <p class="uikit-brand-section-desc">Base: <span id="brand-2-base">--</span></p>
+                  <div class="uikit-brand-grid" data-scale="brand-2"></div>
+                </div>
+
+                <div class="uikit-brand-section">
+                  <h3 class="uikit-brand-section-title">Brand Secondary 2 (brand-3)</h3>
+                  <p class="uikit-brand-section-desc">Base: <span id="brand-3-base">--</span></p>
+                  <div class="uikit-brand-grid" data-scale="brand-3"></div>
+                </div>
+
+                <div class="uikit-brand-section">
+                  <h3 class="uikit-brand-section-title">Brand Secondary 3 (brand-4)</h3>
+                  <p class="uikit-brand-section-desc">Base: <span id="brand-4-base">--</span></p>
+                  <div class="uikit-brand-grid" data-scale="brand-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="uikit-detail" id="detail-panel">
+          <div class="uikit-detail-header">
+            <h3 class="uikit-detail-title" id="detail-title">Component</h3>
+            <button class="uikit-detail-close" id="detail-close" aria-label="Close panel">&times;</button>
+          </div>
+
+          <div class="uikit-detail-body">
+            <div class="uikit-detail-section">
+              <div class="uikit-detail-label">Description</div>
+              <p class="uikit-detail-desc" id="detail-desc"></p>
+            </div>
+
+            <div class="uikit-detail-section">
+              <div class="uikit-detail-label">Category</div>
+              <p class="uikit-detail-desc" id="detail-category"></p>
+            </div>
+
+            <div class="uikit-detail-section">
+              <div class="uikit-detail-label">Preview</div>
+              <div class="uikit-preview-frame" id="detail-preview"></div>
+            </div>
+
+            <div class="uikit-detail-section">
+              <div class="uikit-detail-label">Code Snippet</div>
+              <div class="uikit-code-wrapper">
+                <pre class="uikit-code" id="detail-code"></pre>
+                <button class="uikit-copy-btn" id="copy-btn" onclick="copyCode()">Copy</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+  <script src="/ui-kit/ui-kit.js"></script>
+</body>
+</html>

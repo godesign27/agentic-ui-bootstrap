@@ -1,0 +1,312 @@
+{
+  "generatedFrom": "COMPONENTS_INDEX.md",
+  "categories": [
+    {
+      "name": "Content / Layout",
+      "items": [
+        {
+          "id": "typography",
+          "title": "Typography",
+          "description": "Text styling, headings, paragraphs, lists, and text utilities",
+          "demoPath": "/components/typography/typography.html",
+          "sourcePaths": ["/components/typography/typography.html"]
+        },
+        {
+          "id": "images",
+          "title": "Images",
+          "description": "Responsive images, rounded corners, thumbnails, and image alignment",
+          "demoPath": "/components/images/images.html",
+          "sourcePaths": ["/components/images/images.html"]
+        },
+        {
+          "id": "figures",
+          "title": "Figures",
+          "description": "Semantic HTML5 structure for images with captions",
+          "demoPath": "/components/figures/figures.html",
+          "sourcePaths": ["/components/figures/figures.html"]
+        }
+      ]
+    },
+    {
+      "name": "Forms",
+      "items": [
+        {
+          "id": "input",
+          "title": "Input",
+          "description": "Text input fields with proper labels and validation",
+          "demoPath": "/components/form/input.html",
+          "sourcePaths": ["/components/form/input.html"]
+        },
+        {
+          "id": "textarea",
+          "title": "Textarea",
+          "description": "Multi-line text input fields",
+          "demoPath": "/components/form/textarea.html",
+          "sourcePaths": ["/components/form/textarea.html"]
+        },
+        {
+          "id": "select",
+          "title": "Select",
+          "description": "Dropdown select menus",
+          "demoPath": "/components/form/select.html",
+          "sourcePaths": ["/components/form/select.html"]
+        },
+        {
+          "id": "checkbox",
+          "title": "Checkbox",
+          "description": "Checkbox input elements",
+          "demoPath": "/components/form/checkbox.html",
+          "sourcePaths": ["/components/form/checkbox.html"]
+        },
+        {
+          "id": "radio",
+          "title": "Radio",
+          "description": "Radio button input elements",
+          "demoPath": "/components/form/radio.html",
+          "sourcePaths": ["/components/form/radio.html"]
+        },
+        {
+          "id": "switch",
+          "title": "Switch",
+          "description": "Toggle switch input elements",
+          "demoPath": "/components/form/switch.html",
+          "sourcePaths": ["/components/form/switch.html"]
+        },
+        {
+          "id": "range",
+          "title": "Range",
+          "description": "Range slider input elements",
+          "demoPath": "/components/form/range.html",
+          "sourcePaths": ["/components/form/range.html"]
+        },
+        {
+          "id": "input-group",
+          "title": "Input Group",
+          "description": "Input fields with addons and buttons",
+          "demoPath": "/components/form/input-group.html",
+          "sourcePaths": ["/components/form/input-group.html"]
+        },
+        {
+          "id": "floating-labels",
+          "title": "Floating Labels",
+          "description": "Input fields with floating labels",
+          "demoPath": "/components/form/floating-labels.html",
+          "sourcePaths": ["/components/form/floating-labels.html"]
+        },
+        {
+          "id": "validation",
+          "title": "Validation",
+          "description": "Form validation states and feedback",
+          "demoPath": "/components/form/validation.html",
+          "sourcePaths": ["/components/form/validation.html"]
+        }
+      ]
+    },
+    {
+      "name": "Navigation",
+      "items": [
+        {
+          "id": "navbar",
+          "title": "Navbar",
+          "description": "Responsive navigation bar with brand, links, and CTA group",
+          "demoPath": "/components/navbar/navbar.html",
+          "sourcePaths": ["/components/navbar/navbar.html"]
+        },
+        {
+          "id": "breadcrumb",
+          "title": "Breadcrumb",
+          "description": "Hierarchical path showing user's location within a site",
+          "demoPath": "/components/breadcrumb/breadcrumb.html",
+          "sourcePaths": ["/components/breadcrumb/breadcrumb.html"]
+        },
+        {
+          "id": "navs-tabs",
+          "title": "Navs and Tabs",
+          "description": "Tab-style navigation for switching between content sections",
+          "demoPath": "/components/navs-tabs/navs-tabs.html",
+          "sourcePaths": ["/components/navs-tabs/navs-tabs.html"]
+        },
+        {
+          "id": "pagination",
+          "title": "Pagination",
+          "description": "Navigation for splitting content across multiple pages",
+          "demoPath": "/components/pagination/pagination.html",
+          "sourcePaths": ["/components/pagination/pagination.html"]
+        }
+      ]
+    },
+    {
+      "name": "Overlays",
+      "items": [
+        {
+          "id": "modal",
+          "title": "Modal",
+          "description": "Dialog boxes for displaying content, forms, or confirmations",
+          "demoPath": "/components/modal/modal.html",
+          "sourcePaths": ["/components/modal/modal.html"]
+        },
+        {
+          "id": "offcanvas",
+          "title": "Offcanvas",
+          "description": "Hidden sidebars that slide in from viewport edges",
+          "demoPath": "/components/offcanvas/offcanvas.html",
+          "sourcePaths": ["/components/offcanvas/offcanvas.html"]
+        },
+        {
+          "id": "popover",
+          "title": "Popover",
+          "description": "Small overlay content appearing on click or hover",
+          "demoPath": "/components/popover/popover.html",
+          "sourcePaths": ["/components/popover/popover.html"]
+        },
+        {
+          "id": "tooltip",
+          "title": "Tooltip",
+          "description": "Small popups appearing on hover or focus for additional information",
+          "demoPath": "/components/tooltip/tooltip.html",
+          "sourcePaths": ["/components/tooltip/tooltip.html"]
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "items": [
+        {
+          "id": "alert",
+          "title": "Alert",
+          "description": "Display contextual feedback messages to users",
+          "demoPath": "/components/alert/alert.html",
+          "sourcePaths": ["/components/alert/alert.html"]
+        },
+        {
+          "id": "toast",
+          "title": "Toast",
+          "description": "Lightweight notifications appearing temporarily",
+          "demoPath": "/components/toast/toast.html",
+          "sourcePaths": ["/components/toast/toast.html"]
+        },
+        {
+          "id": "spinner",
+          "title": "Spinner",
+          "description": "Loading indicators for processing or loading content",
+          "demoPath": "/components/spinner/spinner.html",
+          "sourcePaths": ["/components/spinner/spinner.html"]
+        },
+        {
+          "id": "progress",
+          "title": "Progress",
+          "description": "Visual indicators showing completion status of tasks",
+          "demoPath": "/components/progress/progress.html",
+          "sourcePaths": ["/components/progress/progress.html"]
+        }
+      ]
+    },
+    {
+      "name": "Data Display",
+      "items": [
+        {
+          "id": "table",
+          "title": "Table",
+          "description": "Responsive data tables with striped rows, hover effects, status badges, and action buttons",
+          "demoPath": "/components/table/table.html",
+          "sourcePaths": ["/components/table/table.html"]
+        },
+        {
+          "id": "card",
+          "title": "Card",
+          "description": "Flexible container for displaying content with optional header, body, and footer",
+          "demoPath": "/components/card/card.html",
+          "sourcePaths": ["/components/card/card.html"]
+        },
+        {
+          "id": "list-group",
+          "title": "List Group",
+          "description": "Flexible components for displaying lists of content with various states",
+          "demoPath": "/components/list-group/list-group.html",
+          "sourcePaths": ["/components/list-group/list-group.html"]
+        },
+        {
+          "id": "badge",
+          "title": "Badge",
+          "description": "Small labels and counters for highlighting information and status indicators",
+          "demoPath": "/components/badge/badge.html",
+          "sourcePaths": ["/components/badge/badge.html"]
+        }
+      ]
+    },
+    {
+      "name": "Interactive Components",
+      "items": [
+        {
+          "id": "button",
+          "title": "Button",
+          "description": "Interactive button elements with various styles and states",
+          "demoPath": "/components/button/button.html",
+          "sourcePaths": ["/components/button/button.html"]
+        },
+        {
+          "id": "button-group",
+          "title": "Button Group",
+          "description": "Combine multiple buttons together for related actions",
+          "demoPath": "/components/button-group/button-group.html",
+          "sourcePaths": ["/components/button-group/button-group.html"]
+        },
+        {
+          "id": "dropdown",
+          "title": "Dropdown",
+          "description": "Toggleable menus for actions, navigation, and options",
+          "demoPath": "/components/dropdown/dropdown.html",
+          "sourcePaths": ["/components/dropdown/dropdown.html"]
+        },
+        {
+          "id": "accordion",
+          "title": "Accordion",
+          "description": "Collapsible content sections that expand and collapse",
+          "demoPath": "/components/accordion/accordion.html",
+          "sourcePaths": ["/components/accordion/accordion.html"]
+        },
+        {
+          "id": "collapse",
+          "title": "Collapse",
+          "description": "Show/hide functionality for content sections",
+          "demoPath": "/components/collapse/collapse.html",
+          "sourcePaths": ["/components/collapse/collapse.html"]
+        },
+        {
+          "id": "carousel",
+          "title": "Carousel",
+          "description": "Slideshows for cycling through images or content",
+          "demoPath": "/components/carousel/carousel.html",
+          "sourcePaths": ["/components/carousel/carousel.html"]
+        }
+      ]
+    },
+    {
+      "name": "Utility Components",
+      "items": [
+        {
+          "id": "close-button",
+          "title": "Close Button",
+          "description": "Consistent way to dismiss alerts, modals, and dismissible content",
+          "demoPath": "/components/close-button/close-button.html",
+          "sourcePaths": ["/components/close-button/close-button.html"]
+        },
+        {
+          "id": "placeholder",
+          "title": "Placeholder",
+          "description": "Skeleton loading states showing content structure while data loads",
+          "demoPath": "/components/placeholder/placeholder.html",
+          "sourcePaths": ["/components/placeholder/placeholder.html"]
+        },
+        {
+          "id": "scrollspy",
+          "title": "Scrollspy",
+          "description": "Automatically update navigation based on scroll position",
+          "demoPath": "/components/scrollspy/scrollspy.html",
+          "sourcePaths": ["/components/scrollspy/scrollspy.html"]
+        }
+      ]
+    }
+  ]
+}
+
