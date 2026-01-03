@@ -1,0 +1,102 @@
+/* Brand Theme
+ * Custom brand colors with full tonal scales (50-900)
+ */
+
+:root {
+    /* Brand Primary (Navy Blue) - Full Scale */
+    --brand-1-50: #e8eaf6;
+    --brand-1-100: #bdc4d9;
+    --brand-1-200: #9199bc;
+    --brand-1-300: #656e9f;
+    --brand-1-400: #3e4882;
+    --brand-1-500: #1e2d5c;
+    --brand-1-600: #1a2750;
+    --brand-1-700: #161f44;
+    --brand-1-800: #121838;
+    --brand-1-900: #0d112b;
+    
+    /* Brand Secondary 1 (Purple) - Full Scale */
+    --brand-2-50: #f3e5f5;
+    --brand-2-100: #e1bee7;
+    --brand-2-200: #ce93d8;
+    --brand-2-300: #ba68c8;
+    --brand-2-400: #ab47bc;
+    --brand-2-500: #7c3aed;
+    --brand-2-600: #6d28d9;
+    --brand-2-700: #5b21b6;
+    --brand-2-800: #4c1d95;
+    --brand-2-900: #3d1878;
+    
+    /* Brand Secondary 2 (Light Purple) - Full Scale */
+    --brand-3-50: #f3e5f5;
+    --brand-3-100: #e1bee7;
+    --brand-3-200: #ce93d8;
+    --brand-3-300: #ba68c8;
+    --brand-3-400: #ab47bc;
+    --brand-3-500: #9333ea;
+    --brand-3-600: #7e22ce;
+    --brand-3-700: #6b21a8;
+    --brand-3-800: #581c87;
+    --brand-3-900: #4a1772;
+    
+    /* Brand Secondary 3 (Teal) - Full Scale */
+    --brand-4-50: #e0f2f1;
+    --brand-4-100: #b2dfdb;
+    --brand-4-200: #80cbc4;
+    --brand-4-300: #4db6ac;
+    --brand-4-400: #26a69a;
+    --brand-4-500: #14b8a6;
+    --brand-4-600: #0d9488;
+    --brand-4-700: #0f766e;
+    --brand-4-800: #115e59;
+    --brand-4-900: #134e4a;
+    
+    /* Main Brand Color Variables (using 500 level) */
+    --brand: var(--brand-1-500);        /* Primary brand color */
+    --brand-2: var(--brand-2-500);      /* Secondary brand color */
+    --brand-3: var(--brand-3-500);      /* Accent brand color */
+    --brand-4: var(--brand-4-500);      /* Highlight brand color */
+    
+    /* Text Color on Brand Backgrounds */
+    --brand-text-on: #fff;
+    
+    /* Optional: Semantic Aliases */
+    --brand-primary: var(--brand);
+    --brand-secondary: var(--brand-2);
+    --brand-accent: var(--brand-3);
+    --brand-highlight: var(--brand-4);
+}
+
+/* Dark Mode Overrides */
+:root[data-bs-theme="dark"] {
+    /* For dark mode, use brighter variants (300-400 level) */
+    --brand: var(--brand-1-400);        /* Brighter primary for dark mode */
+    --brand-2: var(--brand-2-400);      /* Adjusted secondary */
+    --brand-3: var(--brand-3-400);      /* Brighter accent */
+    --brand-4: var(--brand-4-400);      /* Adjusted highlight */
+    --brand-text-on: #fff;              /* Usually stays white */
+    
+    /* Update semantic aliases */
+    --brand-primary: var(--brand);
+    --brand-secondary: var(--brand-2);
+    --brand-accent: var(--brand-3);
+    --brand-highlight: var(--brand-4);
+}
+
+/* 
+ * USAGE:
+ * 
+ * You can now use these brand color scales in your components:
+ * 
+ * - Main brand colors: var(--brand), var(--brand-2), var(--brand-3), var(--brand-4)
+ * - Tonal scales: var(--brand-1-50) through var(--brand-1-900)
+ * - Utility classes: .btn-brand, .bg-brand, .text-brand, etc. (defined in overrides.css)
+ * 
+ * Example:
+ * .my-element {
+ *     background-color: var(--brand-1-100);  // Light navy background
+ *     color: var(--brand-1-900);             // Dark navy text
+ *     border: 2px solid var(--brand-2-500);  // Purple border
+ * }
+ */
+
