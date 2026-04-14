@@ -1,0 +1,68 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Offcanvas",
+  "status": "active",
+  "description": "Hidden sidebar panel that slides into the viewport from an edge.",
+  "intent": "Provide space-efficient secondary navigation and contextual controls.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "start",
+    "end",
+    "top",
+    "bottom"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "slots": [
+    {
+      "name": "header",
+      "required": true,
+      "allowedContent": [
+        "text",
+        "component"
+      ]
+    },
+    {
+      "name": "body",
+      "required": true,
+      "allowedContent": [
+        "component",
+        "text"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing"
+    ]
+  },
+  "accessibility": {
+    "role": "dialog",
+    "keyboard": [
+      "Escape",
+      "Tab",
+      "Shift+Tab"
+    ],
+    "requiredAttributes": [
+      "aria-labelledby",
+      "tabindex='-1'"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Navbar",
+      "Button",
+      "Dropdown"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not use offcanvas as the only way to access critical desktop actions"
+    ]
+  }
+}

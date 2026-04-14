@@ -1,0 +1,67 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Dropdown",
+  "status": "active",
+  "description": "Toggleable menu for actions, navigation, and contextual options.",
+  "intent": "Offer compact access to secondary actions.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "split-button",
+    "dropup",
+    "dropend",
+    "dropstart"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "slots": [
+    {
+      "name": "trigger",
+      "required": true,
+      "allowedContent": [
+        "text",
+        "icon"
+      ]
+    },
+    {
+      "name": "menuItems",
+      "required": true,
+      "allowedContent": [
+        "component"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing"
+    ]
+  },
+  "accessibility": {
+    "role": "button + menu",
+    "keyboard": [
+      "ArrowDown",
+      "ArrowUp",
+      "Enter",
+      "Escape"
+    ],
+    "requiredAttributes": [
+      "aria-expanded",
+      "aria-labelledby on menu"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Button"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not hide critical primary actions inside dropdowns"
+    ]
+  }
+}

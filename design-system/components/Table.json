@@ -1,0 +1,71 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Table",
+  "status": "active",
+  "description": "Bootstrap table for structured data with responsive wrapper, status badges, and row actions.",
+  "intent": "Support scanning and management of records in admin and CRUD views.",
+  "platforms": [
+    "web",
+    "desktop"
+  ],
+  "variants": [
+    "default",
+    "striped",
+    "hover",
+    "bordered",
+    "borderless",
+    "compact"
+  ],
+  "states": [
+    "default",
+    "loading",
+    "empty",
+    "with-actions"
+  ],
+  "slots": [
+    {
+      "name": "columns",
+      "required": true,
+      "allowedContent": [
+        "data"
+      ]
+    },
+    {
+      "name": "rows",
+      "required": true,
+      "allowedContent": [
+        "data"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing",
+      "typography.body",
+      "color.bootstrapContext.success",
+      "color.bootstrapContext.warning",
+      "color.bootstrapContext.danger"
+    ]
+  },
+  "accessibility": {
+    "role": "table",
+    "keyboard": [
+      "Tab"
+    ],
+    "requiredAttributes": [
+      "thead/tbody structure",
+      "scope='col' on column headers",
+      "scope='row' on row headers when applicable"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [],
+    "forbiddenChildren": [
+      "Dialog"
+    ],
+    "forbiddenUsage": [
+      "Do not use tables for page layout",
+      "Do not omit table-responsive wrapper in responsive pages"
+    ]
+  }
+}

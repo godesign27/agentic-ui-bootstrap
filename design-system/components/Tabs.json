@@ -1,0 +1,74 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Tabs",
+  "status": "active",
+  "description": "Bootstrap nav tabs/pills/underlines for switching peer content sections.",
+  "intent": "Provide in-place section switching with ARIA-linked tab and panel semantics.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "nav-tabs",
+    "nav-pills",
+    "nav-underline"
+  ],
+  "states": [
+    "default",
+    "active",
+    "focus",
+    "disabled"
+  ],
+  "slots": [
+    {
+      "name": "tabList(nav > nav-item > nav-link)",
+      "required": true,
+      "allowedContent": [
+        "component"
+      ]
+    },
+    {
+      "name": "tabPanels(tab-content > tab-pane)",
+      "required": true,
+      "allowedContent": [
+        "component"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing"
+    ]
+  },
+  "accessibility": {
+    "role": "tablist",
+    "keyboard": [
+      "ArrowLeft",
+      "ArrowRight",
+      "Home",
+      "End"
+    ],
+    "requiredAttributes": [
+      "role='tablist'",
+      "role='tab'",
+      "role='presentation'",
+      "aria-controls",
+      "aria-selected",
+      "aria-labelledby"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Card",
+      "Table",
+      "Alert"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not use tabs for primary site navigation",
+      "Do not use tabs for strictly sequential workflows"
+    ]
+  }
+}

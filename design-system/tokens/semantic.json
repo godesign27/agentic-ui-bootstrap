@@ -1,0 +1,39 @@
+{
+  "$schema": "https://example.com/schemas/tokens/semantic.schema.json",
+  "color": {
+    "bootstrapContext": {
+      "primary": "color.brand.primary",
+      "secondary": "color.brand.secondary",
+      "success": "color.brand.success",
+      "danger": "color.brand.danger",
+      "warning": "color.brand.warning",
+      "info": "color.brand.info"
+    },
+    "brandUtilities": {
+      "bg.brand": "color.brandThemeTemplate.brand",
+      "bg.brand-2": "color.brandThemeTemplate.brand-2",
+      "bg.brand-3": "color.brandThemeTemplate.brand-3",
+      "bg.brand-4": "color.brandThemeTemplate.brand-4",
+      "text.onBrand": "color.brandThemeTemplate.brand-text-on"
+    },
+    "usageRule": {
+      "default": "Prefer Bootstrap semantic utility classes such as btn-primary, bg-success, text-danger.",
+      "brandOverride": "Use .btn-brand/.bg-brand/.text-brand only when /styles/brand.css is present."
+    }
+  },
+  "component": {
+    "card": {
+      "radius": "radius.lg",
+      "shadow.default": "shadow.sm",
+      "shadow.hover": "shadow.md"
+    }
+  },
+  "typography": {
+    "body": "typography.bodyFontFamily"
+  },
+  "layout": {
+    "container": "Bootstrap .container",
+    "rowColGrid": "Bootstrap .row/.col-*",
+    "spacing": "Bootstrap utility classes (mb-*, mt-*, py-*, gap-*)"
+  }
+}

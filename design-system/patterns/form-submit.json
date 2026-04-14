@@ -1,0 +1,26 @@
+{
+  "$schema": "https://example.com/schemas/patterns/pattern.schema.json",
+  "name": "form-submit",
+  "intent": "Guide users through valid, accessible form completion and submission.",
+  "requiredComponents": [
+    "FormField",
+    "Input",
+    "Button"
+  ],
+  "sequence": [
+    "User completes labeled fields",
+    "Validation feedback appears with is-valid/is-invalid and feedback blocks",
+    "Primary submit button sends form",
+    "Success or error alert appears near form"
+  ],
+  "requiredRules": [
+    "All inputs must have labels",
+    "Label for/id must match",
+    "Errors must be tied to fields",
+    "Primary submit action must be clear"
+  ],
+  "forbiddenRules": [
+    "No unlabeled required field",
+    "No submit action without visible primary CTA"
+  ]
+}

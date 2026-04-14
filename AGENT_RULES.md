@@ -12,15 +12,19 @@
 
 ## Usage Workflow
 
-1. **Start with App Shell**: Always begin with `/assets/app-shell.html` as the base template.
+1. **Check Design-System First**: Start with `/design-system` as the primary source of truth (meta, tokens, components, patterns, graph, rules, agents) when planning or generating output.
 
-2. **Reference Components**: Consult `/COMPONENTS_INDEX.md` to find available components and their file paths.
+2. **Fallback to Core Flow if Needed**: If required details are missing or unclear in `/design-system`, follow the core implementation flow below.
 
-3. **Copy Snippets**: Copy component HTML snippets from `/components/<component>/<component>.html` into your page.
+3. **Start with App Shell**: Begin with `/assets/app-shell.html` as the base template.
 
-4. **Follow Documentation**: Read each component's `.md` file for usage rules, variants, accessibility requirements, and dependencies.
+4. **Reference Components**: Consult `/COMPONENTS_INDEX.md` to find available components and their file paths.
 
-5. **Compose Pages**: Combine multiple components within the `<main class="container py-5">` region of the app shell.
+5. **Copy Snippets**: Copy component HTML snippets from `/components/<component>/<component>.html` into your page.
+
+6. **Follow Documentation**: Read each component's `.md` file for usage rules, variants, accessibility requirements, and dependencies.
+
+7. **Compose Pages**: Combine multiple components within the `<main class="container py-5">` region of the app shell.
 
 ## Constraints
 
@@ -59,16 +63,19 @@
 
 Agents must read documentation in this order before composing pages:
 
-1. **README.md** - Overview and getting started
-2. **AGENT_RULES.md** - This file: core principles and constraints
-3. **COMPONENTS_INDEX.md** - Complete inventory of available components, patterns, and examples
-4. **DESIGN_PRINCIPLES.md** - Design decision framework and component restrictions
-5. **ACCESSIBILITY.md** - WCAG 2.1 AA requirements and mandatory rules
-6. **TOKENS_REFERENCE.md** - Available design tokens and usage rules
-7. **Component-level *.md** - Individual component documentation as needed
-8. **Patterns/Examples** - Reference patterns and examples for specific use cases
+1. **`/design-system` (read first)** - Primary AI-ready source of truth for system metadata, tokens, component contracts, patterns, graph relations, rules, and agent instructions
+2. **README.md** - Overview and getting started
+3. **AGENT_RULES.md** - This file: core principles and constraints
+4. **COMPONENTS_INDEX.md** - Complete inventory of available components, patterns, and examples
+5. **DESIGN_PRINCIPLES.md** - Design decision framework and component restrictions
+6. **ACCESSIBILITY.md** - WCAG 2.1 AA requirements and mandatory rules
+7. **TOKENS_REFERENCE.md** - Available design tokens and usage rules
+8. **Component-level *.md** - Individual component documentation as needed
+9. **Patterns/Examples** - Reference patterns and examples for specific use cases
 
-This order ensures agents understand constraints, available resources, and quality standards before implementation.
+Decision rule: if `/design-system` contains what is needed, follow it; if not, continue through the fallback core docs above in order.
+
+This order ensures agents use the machine-readable layer first, then fall back to the established implementation docs and constraints when necessary.
 
 ## Output Rejection Conditions
 

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://example.com/schemas/graph/component-pages.schema.json",
+  "entries": [
+    {
+      "component": "Button",
+      "pages": [
+        "Dashboard",
+        "Settings",
+        "Checkout",
+        "Login",
+        "Pricing"
+      ]
+    },
+    {
+      "component": "FormField",
+      "pages": [
+        "Checkout",
+        "Settings",
+        "Login",
+        "SignUp"
+      ]
+    },
+    {
+      "component": "Dialog",
+      "pages": [
+        "Modal Confirm",
+        "CRUD Table"
+      ]
+    },
+    {
+      "component": "Navbar",
+      "pages": [
+        "Dashboard",
+        "Marketing Home",
+        "Starter Template",
+        "Navbars"
+      ]
+    },
+    {
+      "component": "Table",
+      "pages": [
+        "CRUD Table",
+        "Dashboard",
+        "Checkout"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Dialog",
+  "status": "active",
+  "description": "Bootstrap modal dialog for confirmations, focused tasks, and form flows.",
+  "intent": "Handle interruptive interactions with explicit actions, focus trap, and escape handling.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "destructive",
+    "form",
+    "size-sm",
+    "size-lg",
+    "size-xl",
+    "fullscreen"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "slots": [
+    {
+      "name": "title",
+      "required": true,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "body",
+      "required": true,
+      "allowedContent": [
+        "text",
+        "component"
+      ]
+    },
+    {
+      "name": "footer",
+      "required": false,
+      "allowedContent": [
+        "component"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing"
+    ]
+  },
+  "accessibility": {
+    "role": "dialog",
+    "keyboard": [
+      "Escape",
+      "Tab",
+      "Shift+Tab"
+    ],
+    "requiredAttributes": [
+      "id",
+      "tabindex='-1'",
+      "aria-labelledby",
+      "aria-hidden"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Button",
+      "Alert",
+      "Input",
+      "FormField"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not use for non-critical passive information",
+      "Do not nest modals inside modals",
+      "Do not omit close/cancel path"
+    ]
+  }
+}

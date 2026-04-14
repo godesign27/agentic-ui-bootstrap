@@ -1,0 +1,16 @@
+{
+  "$schema": "https://example.com/schemas/agents/context-loading.schema.json",
+  "steps": [
+    "Load /meta/system.json and /meta/changelog.json",
+    "Load /BOOTSTRAP_VERSION.md and /README.md for baseline framework constraints",
+    "Load /tokens/primitives.json, /tokens/semantic.json, /tokens/aliases.json",
+    "Load /styles/tokens.css and /styles/overrides.css when validating token references",
+    "Load /components/schema.json and all component contracts",
+    "Load /rules/*.json and /patterns/*.json",
+    "Load /graph/*.json for dependencies and inferred page criticality",
+    "Confirm context loaded",
+    "Do not generate UI yet"
+  ],
+  "successMessage": "Context loaded. No UI generated.",
+  "failureMessage": "Context incomplete. UI generation blocked."
+}

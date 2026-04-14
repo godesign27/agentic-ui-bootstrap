@@ -1,0 +1,12 @@
+{
+  "$schema": "https://example.com/schemas/rules/generation.schema.json",
+  "generationMode": "constrained",
+  "instructions": [
+    "Use only approved components in /components",
+    "Use Bootstrap semantic utility classes first; use brand utility classes only when /styles/brand.css is present",
+    "Respect pattern rules in /patterns and /rules/composition.json",
+    "Reject requests that require forbidden components or styles",
+    "Do not generate UI before context is fully loaded",
+    "Do not modify source component docs/snippets outside /design-system during mapping workflows"
+  ]
+}

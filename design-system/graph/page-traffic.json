@@ -1,0 +1,29 @@
+{
+  "$schema": "https://example.com/schemas/graph/page-traffic.schema.json",
+  "entries": [
+    {
+      "page": "Checkout",
+      "trafficTier": "high",
+      "businessCriticality": "high",
+      "notes": "Inferred from /examples/checkout.html naming; TODO verify with analytics"
+    },
+    {
+      "page": "Dashboard",
+      "trafficTier": "high",
+      "businessCriticality": "medium",
+      "notes": "Inferred from /examples/dashboard.html naming; TODO verify with analytics"
+    },
+    {
+      "page": "Login",
+      "trafficTier": "medium",
+      "businessCriticality": "high",
+      "notes": "Inferred from /examples/login.html authentication pattern; TODO verify with analytics"
+    },
+    {
+      "page": "Marketing Home",
+      "trafficTier": "unknown",
+      "businessCriticality": "unknown",
+      "notes": "TODO no explicit traffic or criticality metadata in repo"
+    }
+  ]
+}

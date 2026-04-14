@@ -1,0 +1,43 @@
+{
+  "$schema": "https://example.com/schemas/graph/component-dependencies.schema.json",
+  "entries": [
+    {
+      "component": "Dialog",
+      "dependsOn": [
+        "Button",
+        "Alert"
+      ]
+    },
+    {
+      "component": "FormField",
+      "dependsOn": [
+        "Input"
+      ]
+    },
+    {
+      "component": "Tabs",
+      "dependsOn": [
+        "Card",
+        "Table"
+      ]
+    },
+    {
+      "component": "Navbar",
+      "dependsOn": [
+        "Button",
+        "Dropdown",
+        "Offcanvas"
+      ]
+    },
+    {
+      "component": "CRUD Table Pattern",
+      "dependsOn": [
+        "Navbar",
+        "Table",
+        "Button",
+        "Dialog",
+        "Alert"
+      ]
+    }
+  ]
+}

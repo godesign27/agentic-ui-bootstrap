@@ -1,0 +1,12 @@
+{
+  "$schema": "https://example.com/schemas/rules/forbidden.schema.json",
+  "forbidden": [
+    "No raw hex values in component definitions",
+    "No inline styles for colors, spacing, or layout in component HTML",
+    "No new CSS classes outside /styles/tokens.css, /styles/overrides.css, or user-created /styles/brand.css",
+    "No direct CSS variable usage in HTML inline style attributes",
+    "No inaccessible color contrast",
+    "No missing focus states for interactive elements",
+    "No destructive action without explicit confirmation modal"
+  ]
+}

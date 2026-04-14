@@ -1,0 +1,27 @@
+{
+  "$schema": "https://example.com/schemas/patterns/pattern.schema.json",
+  "name": "wizard-stepper",
+  "intent": "Guide users through sequential multi-step flows such as onboarding and checkout.",
+  "requiredComponents": [
+    "Tabs",
+    "Progress",
+    "FormField",
+    "Input",
+    "Button",
+    "Card"
+  ],
+  "sequence": [
+    "User sees current step and total progress",
+    "User completes current step fields",
+    "Validation gates transition to next step",
+    "User can navigate backward without losing data"
+  ],
+  "requiredRules": [
+    "Current step must be clearly labeled",
+    "Progress indicator should expose progressbar semantics",
+    "Previous button disabled on first step"
+  ],
+  "forbiddenRules": [
+    "No hidden progress or unlabeled step transitions"
+  ]
+}

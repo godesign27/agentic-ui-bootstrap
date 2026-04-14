@@ -1,0 +1,37 @@
+{
+  "$schema": "https://example.com/schemas/agents/validation.schema.json",
+  "checks": [
+    {
+      "id": "VALIDATE_COMPONENTS",
+      "description": "Reject components not in approved library"
+    },
+    {
+      "id": "VALIDATE_TOKENS",
+      "description": "Reject raw values and disallowed token usage in components"
+    },
+    {
+      "id": "VALIDATE_PATTERNS",
+      "description": "Enforce required pattern compositions"
+    },
+    {
+      "id": "VALIDATE_ACCESSIBILITY",
+      "description": "Check baseline WCAG and interaction requirements"
+    },
+    {
+      "id": "VALIDATE_BOOTSTRAP_CONSTRAINTS",
+      "description": "Ensure output aligns with Bootstrap 5.3.8 conventions and project rules"
+    }
+  ],
+  "resultShape": {
+    "status": "pass|fail|warning",
+    "violations": [
+      {
+        "ruleId": "string",
+        "severity": "low|medium|high|critical",
+        "message": "string",
+        "location": "string",
+        "suggestedFix": "string"
+      }
+    ]
+  }
+}

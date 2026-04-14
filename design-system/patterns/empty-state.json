@@ -1,0 +1,23 @@
+{
+  "$schema": "https://example.com/schemas/patterns/pattern.schema.json",
+  "name": "empty-state",
+  "intent": "Help users recover from or understand zero-data states.",
+  "requiredComponents": [
+    "Card",
+    "Button",
+    "Images"
+  ],
+  "sequence": [
+    "User lands on empty state",
+    "Message explains absence of content",
+    "Primary CTA offers next best action",
+    "Optional secondary action offers docs/help path"
+  ],
+  "requiredRules": [
+    "State must explain why content is missing or what to do next",
+    "CTA must be optional but clear"
+  ],
+  "forbiddenRules": [
+    "No dead-end empty state without guidance"
+  ]
+}

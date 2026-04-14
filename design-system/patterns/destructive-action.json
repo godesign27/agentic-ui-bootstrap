@@ -1,0 +1,27 @@
+{
+  "$schema": "https://example.com/schemas/patterns/pattern.schema.json",
+  "name": "destructive-action",
+  "intent": "Protect users from irreversible actions using explicit confirmation.",
+  "requiredComponents": [
+    "Dialog",
+    "Alert",
+    "Button"
+  ],
+  "sequence": [
+    "User initiates destructive action",
+    "Modal dialog requests confirmation",
+    "Warning copy communicates consequences",
+    "Danger action button confirms action",
+    "Cancel path dismisses modal"
+  ],
+  "requiredRules": [
+    "Must include explicit confirmation language",
+    "Must visually differentiate destructive action",
+    "Must support keyboard navigation",
+    "Must provide cancel path",
+    "Must include aria-labelledby and close button aria-label in modal"
+  ],
+  "forbiddenRules": [
+    "No single-click irreversible deletion without confirmation"
+  ]
+}

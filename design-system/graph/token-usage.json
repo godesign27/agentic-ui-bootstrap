@@ -1,0 +1,58 @@
+{
+  "$schema": "https://example.com/schemas/graph/token-usage.schema.json",
+  "entries": [
+    {
+      "token": "color.bootstrapContext.primary",
+      "usedBy": [
+        {
+          "component": "Button",
+          "variant": "primary"
+        },
+        {
+          "component": "Navbar",
+          "variant": "primary-themed"
+        }
+      ]
+    },
+    {
+      "token": "component.card.radius",
+      "usedBy": [
+        {
+          "component": "Card",
+          "variant": "default"
+        }
+      ]
+    },
+    {
+      "token": "component.card.shadow.default",
+      "usedBy": [
+        {
+          "component": "Card",
+          "variant": "default"
+        }
+      ]
+    },
+    {
+      "token": "component.card.shadow.hover",
+      "usedBy": [
+        {
+          "component": "Card",
+          "variant": "hover"
+        }
+      ]
+    },
+    {
+      "token": "color.brandUtilities.bg.brand",
+      "usedBy": [
+        {
+          "component": "Button",
+          "variant": "brand"
+        },
+        {
+          "component": "Badge",
+          "variant": "brand (from overrides.css)"
+        }
+      ]
+    }
+  ]
+}

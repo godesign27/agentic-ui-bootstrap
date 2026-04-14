@@ -1,0 +1,66 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Accordion",
+  "status": "active",
+  "description": "Collapsible content panels that expand and collapse.",
+  "intent": "Reduce visual complexity while keeping details available on demand.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "flush",
+    "always-open"
+  ],
+  "states": [
+    "expanded",
+    "collapsed"
+  ],
+  "slots": [
+    {
+      "name": "itemHeader",
+      "required": true,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "itemBody",
+      "required": true,
+      "allowedContent": [
+        "text",
+        "component"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing"
+    ]
+  },
+  "accessibility": {
+    "role": "button + region",
+    "keyboard": [
+      "Enter",
+      "Space",
+      "Tab"
+    ],
+    "requiredAttributes": [
+      "aria-expanded on trigger",
+      "aria-controls linking trigger/content"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Button",
+      "Alert",
+      "FormField"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not hide critical blocking errors only inside collapsed panels"
+    ]
+  }
+}

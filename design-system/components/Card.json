@@ -1,0 +1,76 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Card",
+  "status": "active",
+  "description": "Flexible container with optional header/body/footer and image slots.",
+  "intent": "Group related content in scan-friendly panels for dashboards, settings, and content blocks.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "header-body-footer",
+    "body-only",
+    "image-top",
+    "image-bottom"
+  ],
+  "states": [
+    "default",
+    "hover"
+  ],
+  "slots": [
+    {
+      "name": "header",
+      "required": false,
+      "allowedContent": [
+        "text",
+        "component"
+      ]
+    },
+    {
+      "name": "body",
+      "required": true,
+      "allowedContent": [
+        "text",
+        "component"
+      ]
+    },
+    {
+      "name": "footer",
+      "required": false,
+      "allowedContent": [
+        "component"
+      ]
+    }
+  ],
+  "tokens": {
+    "designTokens": [
+      "component.card.radius",
+      "component.card.shadow.default",
+      "component.card.shadow.hover",
+      "typography.body"
+    ]
+  },
+  "accessibility": {
+    "role": "group",
+    "keyboard": [],
+    "requiredAttributes": []
+  },
+  "rules": {
+    "allowedChildren": [
+      "Button",
+      "Alert",
+      "Input",
+      "Tabs",
+      "Table",
+      "FormField"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not nest cards inside cards",
+      "Do not overload card content without hierarchy"
+    ]
+  }
+}

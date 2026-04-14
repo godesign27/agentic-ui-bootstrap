@@ -1,0 +1,16 @@
+{
+  "$schema": "https://example.com/schemas/rules/accessibility.schema.json",
+  "requirements": [
+    "WCAG 2.1 Level AA minimum across pages and components",
+    "Use semantic HTML5 landmarks with one <main> and logical heading hierarchy",
+    "All form inputs must have associated labels (for/id match)",
+    "Use fieldset/legend for grouped controls where applicable",
+    "All interactive controls must have keyboard support and visible focus indicators",
+    "Text contrast must meet 4.5:1 (normal) and 3:1 (large text)",
+    "Do not rely on color alone to convey information",
+    "Tables must include thead/tbody and scope attributes",
+    "Modals must include aria-labelledby, tabindex=-1, ESC close, and focus return",
+    "Dropdown/nav toggles must expose aria-expanded and related aria links",
+    "Alerts/toasts should use appropriate role/aria-live attributes"
+  ]
+}

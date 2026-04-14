@@ -1,0 +1,26 @@
+{
+  "$schema": "https://example.com/schemas/agents/page-generation.schema.json",
+  "requiredInputs": [
+    "pageGoal",
+    "userType",
+    "businessConstraints",
+    "allowedComponents",
+    "systemRules",
+    "bootstrapVersion"
+  ],
+  "requiredOutputs": [
+    "componentList",
+    "layoutRationale",
+    "tokenComplianceReport",
+    "accessibilityChecklist",
+    "generatedUI"
+  ],
+  "instructions": [
+    "Start with approved page patterns if one exists",
+    "Select only closed-library components",
+    "Use Bootstrap utility conventions and approved token/brand rules",
+    "Produce rationale before final UI",
+    "Return validation-ready output",
+    "Mark inferred decisions with TODO when source evidence is incomplete"
+  ]
+}

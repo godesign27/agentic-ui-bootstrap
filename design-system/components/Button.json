@@ -1,0 +1,96 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Button",
+  "status": "active",
+  "description": "Bootstrap button for actions, form submission, and button-styled links.",
+  "intent": "Provide clear CTAs with semantic variant classes and proper button type semantics.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "primary",
+    "secondary",
+    "success",
+    "danger",
+    "warning",
+    "info",
+    "light",
+    "dark",
+    "link",
+    "brand",
+    "outline-*",
+    "size-lg",
+    "size-sm"
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus",
+    "disabled",
+    "active"
+  ],
+  "slots": [
+    {
+      "name": "label",
+      "required": true,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "leadingIcon",
+      "required": false,
+      "allowedContent": [
+        "icon"
+      ]
+    },
+    {
+      "name": "trailingIcon",
+      "required": false,
+      "allowedContent": [
+        "icon"
+      ]
+    }
+  ],
+  "tokens": {
+    "semantic": [
+      "color.bootstrapContext.primary",
+      "color.bootstrapContext.secondary",
+      "color.bootstrapContext.success",
+      "color.bootstrapContext.danger",
+      "color.bootstrapContext.warning",
+      "color.bootstrapContext.info"
+    ],
+    "brand": [
+      "color.brandUtilities.bg.brand",
+      "color.brandUtilities.text.onBrand"
+    ]
+  },
+  "accessibility": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "requiredAttributes": [
+      "type",
+      "aria-disabled (when disabled)"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Icon"
+    ],
+    "forbiddenChildren": [
+      "Dialog",
+      "Input"
+    ],
+    "forbiddenUsage": [
+      "Do not use <button> for navigation when an <a class='btn ...'> is appropriate",
+      "Do not omit type attribute",
+      "Do not rely on color alone to convey meaning"
+    ]
+  }
+}

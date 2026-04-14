@@ -1,0 +1,22 @@
+{
+  "$schema": "https://example.com/schemas/rules/naming.schema.json",
+  "tokens": {
+    "pattern": "CSS variables use --token-name in /styles/tokens.css and --brand* in /styles/brand.css; semantic utility usage in markup uses Bootstrap class names.",
+    "examples": [
+      "--brand-primary",
+      "--radius-lg",
+      "--shadow-md",
+      "btn-primary",
+      "bg-success",
+      "text-danger"
+    ]
+  },
+  "components": {
+    "pattern": "filesystem kebab-case for folders + docs, PascalCase for machine-readable contract names",
+    "examples": [
+      "Button",
+      "FormField",
+      "NavsTabs (represented as Tabs contract)"
+    ]
+  }
+}

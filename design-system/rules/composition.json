@@ -1,0 +1,61 @@
+{
+  "$schema": "https://example.com/schemas/rules/composition.schema.json",
+  "rules": [
+    {
+      "pattern": "destructive-action",
+      "mustInclude": [
+        "Dialog",
+        "Alert",
+        "Button.destructive"
+      ]
+    },
+    {
+      "pattern": "form-submit",
+      "mustInclude": [
+        "FormField",
+        "Button.primary"
+      ],
+      "mustNotInclude": [
+        "More than one primary button per action region"
+      ]
+    },
+    {
+      "pattern": "empty-state",
+      "mustInclude": [
+        "Card",
+        "Button"
+      ],
+      "mustNotInclude": [
+        "Dead-end state with no explanation"
+      ]
+    },
+    {
+      "pattern": "crud-table",
+      "mustInclude": [
+        "Table",
+        "Button",
+        "Dialog for delete confirmations"
+      ],
+      "mustNotInclude": [
+        "Delete action without confirmation"
+      ]
+    },
+    {
+      "pattern": "search-filter-sort",
+      "mustInclude": [
+        "Input",
+        "Filter control",
+        "Sort control",
+        "Visible active filters when applied"
+      ]
+    },
+    {
+      "pattern": "wizard-stepper",
+      "mustInclude": [
+        "Progress indicator",
+        "Step label",
+        "Previous/Next controls"
+      ]
+    }
+  ]
+}

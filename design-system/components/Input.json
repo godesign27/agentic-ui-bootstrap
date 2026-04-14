@@ -1,0 +1,88 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Input",
+  "status": "active",
+  "description": "Bootstrap form controls for single-line input and related validated entry states.",
+  "intent": "Support accessible data capture with labels, validation feedback, and semantic input types.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "error",
+    "success",
+    "disabled",
+    "size-lg",
+    "size-sm",
+    "email",
+    "password",
+    "number",
+    "tel",
+    "url"
+  ],
+  "states": [
+    "default",
+    "focus",
+    "disabled",
+    "error",
+    "valid"
+  ],
+  "slots": [
+    {
+      "name": "value",
+      "required": false,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "helperText",
+      "required": false,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "validationFeedback",
+      "required": false,
+      "allowedContent": [
+        "text"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing",
+      "typography.body"
+    ]
+  },
+  "accessibility": {
+    "role": "textbox",
+    "keyboard": [
+      "Tab",
+      "Shift+Tab"
+    ],
+    "requiredAttributes": [
+      "id",
+      "name",
+      "type",
+      "aria-describedby (when helper/error text present)"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Icon"
+    ],
+    "forbiddenChildren": [
+      "Button",
+      "Dialog"
+    ],
+    "forbiddenUsage": [
+      "Do not render without an associated label",
+      "Do not use placeholder as a label replacement",
+      "Do not use generic/non-unique ids"
+    ]
+  }
+}

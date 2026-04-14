@@ -1,0 +1,26 @@
+{
+  "$schema": "https://example.com/schemas/patterns/pattern.schema.json",
+  "name": "search-filter-sort",
+  "intent": "Help users find and organize content in data-rich views.",
+  "requiredComponents": [
+    "Input",
+    "FormField",
+    "Button",
+    "Table",
+    "Card"
+  ],
+  "sequence": [
+    "User enters search query",
+    "User applies one or more filters",
+    "User applies sort option",
+    "Result list updates with visible active filters"
+  ],
+  "requiredRules": [
+    "Search and filter controls must be labeled",
+    "Filter reset path must be visible",
+    "Active filters must be shown and removable"
+  ],
+  "forbiddenRules": [
+    "No hidden search entry points in data-heavy pages"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://example.com/schemas/meta/system.schema.json",
+  "name": "Agentic Bootstrap Component Library",
+  "systemVersion": "5.3.8-bootstrap",
+  "schemaVersion": "1.0.0",
+  "owner": "agentic-ai-bootstrap maintainers",
+  "lastUpdated": "2026-03-12",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "supportedThemes": [
+    "light",
+    "dark (via Bootstrap data-bs-theme + optional brand.css)"
+  ],
+  "tokenStrategy": "bootstrap-semantic-first-with-css-custom-properties",
+  "componentModel": "closed-library",
+  "validationMode": "enforce",
+  "defaultDensity": "comfortable",
+  "sourcesOfTruth": [
+    "/README.md",
+    "/COMPONENTS_INDEX.md",
+    "/ACCESSIBILITY.md",
+    "/TOKENS_REFERENCE.md",
+    "/styles/tokens.css",
+    "/styles/overrides.css"
+  ]
+}

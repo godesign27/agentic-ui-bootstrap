@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Component Contract",
+  "type": "object",
+  "required": [
+    "name",
+    "status",
+    "description",
+    "intent",
+    "platforms",
+    "variants",
+    "states",
+    "slots",
+    "tokens",
+    "accessibility",
+    "rules"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "experimental"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "required",
+          "allowedContent"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "allowedContent": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "keyboard": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requiredAttributes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "allowedChildren": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbiddenChildren": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbiddenUsage": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

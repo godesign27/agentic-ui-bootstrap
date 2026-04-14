@@ -1,0 +1,79 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Navbar",
+  "status": "active",
+  "description": "Responsive top navigation with brand, links, collapse toggle, and optional CTA.",
+  "intent": "Provide global navigation across pages and examples.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "static-top",
+    "fixed-top",
+    "fixed-bottom",
+    "offcanvas"
+  ],
+  "states": [
+    "expanded",
+    "collapsed",
+    "active-link"
+  ],
+  "slots": [
+    {
+      "name": "brand",
+      "required": true,
+      "allowedContent": [
+        "text",
+        "image"
+      ]
+    },
+    {
+      "name": "navLinks",
+      "required": true,
+      "allowedContent": [
+        "component"
+      ]
+    },
+    {
+      "name": "actions",
+      "required": false,
+      "allowedContent": [
+        "component"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing",
+      "color.bootstrapContext.primary"
+    ]
+  },
+  "accessibility": {
+    "role": "navigation",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space",
+      "Escape"
+    ],
+    "requiredAttributes": [
+      "aria-label on toggler",
+      "aria-expanded on toggler",
+      "aria-controls on toggler",
+      "aria-current='page' on active link"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Button",
+      "Dropdown"
+    ],
+    "forbiddenChildren": [],
+    "forbiddenUsage": [
+      "Do not omit toggler aria attributes on responsive navbars"
+    ]
+  }
+}

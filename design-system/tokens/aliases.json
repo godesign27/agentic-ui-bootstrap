@@ -1,0 +1,15 @@
+{
+  "$schema": "https://example.com/schemas/tokens/aliases.schema.json",
+  "aliases": {
+    "button.primary.default": "color.bootstrapContext.primary",
+    "button.destructive.default": "color.bootstrapContext.danger",
+    "status.success": "color.bootstrapContext.success",
+    "status.warning": "color.bootstrapContext.warning",
+    "status.error": "color.bootstrapContext.danger",
+    "card.radius": "component.card.radius",
+    "card.shadow.default": "component.card.shadow.default",
+    "card.shadow.hover": "component.card.shadow.hover",
+    "body.font.family": "typography.body",
+    "brand.cta": "color.brandUtilities.bg.brand"
+  }
+}

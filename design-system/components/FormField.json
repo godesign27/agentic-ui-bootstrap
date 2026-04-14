@@ -1,0 +1,85 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "FormField",
+  "status": "active",
+  "description": "Canonical Bootstrap field grouping pattern: label + control + helper/feedback.",
+  "intent": "Ensure each control has accessible labeling, spacing, and validation feedback.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "default",
+    "required",
+    "error",
+    "valid",
+    "with-helper-text"
+  ],
+  "states": [
+    "default",
+    "error",
+    "disabled"
+  ],
+  "slots": [
+    {
+      "name": "label",
+      "required": true,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "control(form-control/form-select/form-check/form-range)",
+      "required": true,
+      "allowedContent": [
+        "component"
+      ]
+    },
+    {
+      "name": "helpText",
+      "required": false,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "errorText",
+      "required": false,
+      "allowedContent": [
+        "text"
+      ]
+    }
+  ],
+  "tokens": {
+    "bootstrap": [
+      "layout.spacing",
+      "typography.body"
+    ]
+  },
+  "accessibility": {
+    "role": "group",
+    "keyboard": [
+      "Tab",
+      "Shift+Tab"
+    ],
+    "requiredAttributes": [
+      "label[for]=control[id]",
+      "required attribute when field is mandatory",
+      "aria-describedby when helper/feedback text exists"
+    ]
+  },
+  "rules": {
+    "allowedChildren": [
+      "Input"
+    ],
+    "forbiddenChildren": [
+      "Dialog"
+    ],
+    "forbiddenUsage": [
+      "Do not separate label and control in production forms",
+      "Do not use placeholder as sole field label",
+      "Do not omit validation feedback for invalid states"
+    ]
+  }
+}

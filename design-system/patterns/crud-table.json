@@ -1,0 +1,25 @@
+{
+  "$schema": "https://example.com/schemas/patterns/pattern.schema.json",
+  "name": "crud-table",
+  "intent": "Manage data records with create, read, update, and delete actions.",
+  "requiredComponents": [
+    "Table",
+    "Button",
+    "Dialog",
+    "Alert"
+  ],
+  "sequence": [
+    "User reviews data table rows",
+    "User performs create or edit action",
+    "Destructive delete action opens confirmation dialog",
+    "System shows success or error feedback"
+  ],
+  "requiredRules": [
+    "Tables must include thead/tbody and scope attributes",
+    "Delete actions must require confirmation",
+    "Action buttons in rows should use compact sizing"
+  ],
+  "forbiddenRules": [
+    "No irreversible delete from a single click in table row"
+  ]
+}

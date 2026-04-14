@@ -1,0 +1,68 @@
+{
+  "$schema": "../components/schema.json",
+  "name": "Alert",
+  "status": "active",
+  "description": "Contextual feedback message using Bootstrap alert classes.",
+  "intent": "Communicate success/warning/error/info state near relevant content.",
+  "platforms": [
+    "web",
+    "desktop",
+    "responsive"
+  ],
+  "variants": [
+    "info",
+    "success",
+    "warning",
+    "error",
+    "primary",
+    "secondary",
+    "light",
+    "dark",
+    "dismissible"
+  ],
+  "states": [
+    "default",
+    "dismissed"
+  ],
+  "slots": [
+    {
+      "name": "title",
+      "required": false,
+      "allowedContent": [
+        "text"
+      ]
+    },
+    {
+      "name": "body",
+      "required": true,
+      "allowedContent": [
+        "text"
+      ]
+    }
+  ],
+  "tokens": {
+    "semantic": [
+      "color.bootstrapContext.primary",
+      "color.bootstrapContext.secondary",
+      "color.bootstrapContext.success",
+      "color.bootstrapContext.danger",
+      "color.bootstrapContext.warning",
+      "color.bootstrapContext.info"
+    ]
+  },
+  "accessibility": {
+    "role": "alert",
+    "keyboard": [],
+    "requiredAttributes": []
+  },
+  "rules": {
+    "allowedChildren": [],
+    "forbiddenChildren": [
+      "Dialog"
+    ],
+    "forbiddenUsage": [
+      "Do not use alerts as the only confirmation step for destructive actions",
+      "Do not rely on alert color alone without clear text"
+    ]
+  }
+}
